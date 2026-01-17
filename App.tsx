@@ -31,12 +31,9 @@ interface GameData {
 const App: React.FC = () => {
   // --- STATE ---
   const [mode, setMode] = useState<AppMode>('HOME');
-  
-  // gameId - faqat aniq o'yin topilganda ishlatiladi
   const [gameId, setGameId] = useState('');
-  
-  // joinCode - inputga yozilayotgan vaqtincha kod
   const [joinCode, setJoinCode] = useState(''); 
+  const [isJoining, setIsJoining] = useState(false);
 
   const [myPlayerId, setMyPlayerId] = useState('');
   const [myName, setMyName] = useState('');
@@ -44,19 +41,22 @@ const App: React.FC = () => {
   const [game, setGame] = useState<GameData | null>(null);
   const [showPlayerList, setShowPlayerList] = useState(false);
 
-  // Sozlamalar
-  const [qCount, setQCount] = useState(15);
+  // --- SOZLAMALAR (YANGILANGAN) ---
+  // Oraliqni tanlash uchun
+  const [rangeStart, setRangeStart] = useState(1);
+  const [rangeEnd, setRangeEnd] = useState(Math.min(30, QUESTIONS.length)); // Default 30 yoki boricha
+  
   const [timeLimit, setTimeLimit] = useState(20);
   const [shuffleMode, setShuffleMode] = useState<ShuffleMode>('BOTH');
 
-  // Search
-  const [searchTerm, setSearchTerm] = useState('');
+  // Review timer
+  const [reviewTimer, setReviewTimer] = useState(5);
 
+  const [searchTerm, setSearchTerm] = useState('');
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   // --- 1. FIREBASE TINGLOVCHISI ---
   useEffect(() => {
-    // Agar gameId bo'sh bo'lsa yoki hali ulanmagan bo'lsa, tinglamasin
     if (!gameId) return;
 
     const unsubscribe = onSnapshot(doc(db, 'games', gameId), (docSnap) => {
@@ -66,8 +66,10 @@ const App: React.FC = () => {
         if (mode === 'LOBBY' && data.status !== 'LOBBY') {
           setMode('GAME');
         }
+        if (data.status === 'REVIEW') {
+          setReviewTimer(5);
+        }
       } else {
-        // O'yin rostdan ham o'chib ketgan bo'lsa
         alert("O'yin yakunlandi yoki topilmadi.");
         setMode('HOME');
         setGameId('');
@@ -78,7 +80,7 @@ const App: React.FC = () => {
     return () => unsubscribe();
   }, [gameId, mode]);
 
-  // --- 2. HOST TIMER LOGIKASI ---
+  // --- 2. HOST TIMER ---
   useEffect(() => {
     if (!game || game.hostId !== myPlayerId || game.status !== 'QUESTION') {
       if (timerRef.current) clearInterval(timerRef.current);
@@ -99,38 +101,61 @@ const App: React.FC = () => {
     };
   }, [game?.timer, game?.status, game?.hostId, myPlayerId, gameId]);
 
-
-  // --- 3. YANGI: AVTOMATIK JAVOB TEKSHIRISH (HOST TOMONIDAN) ---
+  // --- 3. REVIEW TIMER ---
   useEffect(() => {
-    // Faqat Host tekshiradi
+    if (!game || game.status !== 'REVIEW' || game.hostId !== myPlayerId) return;
+
+    const reviewInterval = setInterval(() => {
+      setReviewTimer((prev) => {
+        if (prev <= 1) {
+          clearInterval(reviewInterval);
+          handlePhaseChange(); 
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(reviewInterval);
+  }, [game?.status, game?.hostId, myPlayerId]);
+
+  // --- 4. AVTO CHECK ---
+  useEffect(() => {
     if (!game || !gameId || myPlayerId !== game.hostId) return;
-    
-    // Faqat savol vaqtida
     if (game.status === 'QUESTION') {
       const allPlayersAnswered = game.players.length > 0 && game.players.every(p => p.currentAnswer !== null);
-      
       if (allPlayersAnswered) {
-        // Hamma javob berib bo'ldi, natijani ko'rsatish
         handlePhaseChange(true);
       }
     }
   }, [game?.players, game?.status, gameId, myPlayerId]);
 
-
   // --- HOST FUNKSIYALARI ---
 
   const createGame = async () => {
     if (!myName.trim()) return alert("Ism kiriting!");
+    
+    // Validatsiya
+    if (rangeStart < 1 || rangeEnd > QUESTIONS.length || rangeStart > rangeEnd) {
+      return alert(`Oraliq xato! 1 dan ${QUESTIONS.length} gacha bo'lishi kerak.`);
+    }
+
+    setIsJoining(true);
 
     const newGameId = Math.floor(100000 + Math.random() * 900000).toString();
     const hostPlayerId = 'host_' + Date.now();
 
-    let selectedQuestions = [...QUESTIONS];
+    // 1. Oraliqni kesib olish (Masalan 61-90)
+    // Array 0-indexlanadi, shuning uchun start-1
+    let selectedQuestions = QUESTIONS.slice(rangeStart - 1, rangeEnd);
+
+    // 2. Savollarni aralashtirish (agar kerak bo'lsa)
     if (shuffleMode === 'QUESTIONS' || shuffleMode === 'BOTH') {
       selectedQuestions.sort(() => Math.random() - 0.5);
     }
-    selectedQuestions = selectedQuestions.slice(0, Math.min(qCount, QUESTIONS.length));
 
+    // 3. Variantlarni aralashtirish
+    // Bu yerda ID o'zgarmaydi, faqat array ichidagi o'rni o'zgaradi
     if (shuffleMode === 'OPTIONS' || shuffleMode === 'BOTH') {
       selectedQuestions = selectedQuestions.map(q => ({
         ...q,
@@ -161,7 +186,9 @@ const App: React.FC = () => {
       setMyPlayerId(hostPlayerId);
       setMode('LOBBY');
     } catch (error) {
-      alert("Firebase xatosi: " + error);
+      alert("Xatolik: " + error);
+    } finally {
+      setIsJoining(false);
     }
   };
 
@@ -177,8 +204,8 @@ const App: React.FC = () => {
     if (!game) return;
 
     if (game.status === 'QUESTION' || forceReview) {
-      // Natijalarni hisoblash
       const currentQ = game.questions[game.currentQuestionIndex];
+      // To'g'ri javob ID sini topamiz
       const correctOpt = currentQ.options.find(o => o.isCorrect)?.id;
 
       const updatedPlayers = game.players.map(p => {
@@ -194,9 +221,7 @@ const App: React.FC = () => {
       });
 
     } else if (game.status === 'REVIEW') {
-      // Keyingi savolga o'tish
       const nextIndex = game.currentQuestionIndex + 1;
-      // Javoblarni tozalash
       const resetPlayers = game.players.map(p => ({ ...p, currentAnswer: null }));
 
       if (nextIndex < game.questions.length) {
@@ -215,8 +240,10 @@ const App: React.FC = () => {
   // --- PLAYER FUNKSIYALARI ---
 
   const joinGame = async () => {
-    // joinCode inputdan keladi
+    if (isJoining) return;
     if (!joinCode || !myName.trim()) return alert("Kod va ism kiritilishi shart!");
+
+    setIsJoining(true);
 
     try {
         const gameRef = doc(db, 'games', joinCode);
@@ -224,9 +251,12 @@ const App: React.FC = () => {
 
         if (snap.exists()) {
             const data = snap.data() as GameData;
-            if (data.status !== 'LOBBY') return alert("O'yin allaqachon boshlangan!");
+            if (data.status !== 'LOBBY') {
+              setIsJoining(false);
+              return alert("O'yin allaqachon boshlangan!");
+            }
 
-            const newPlayerId = 'p_' + Date.now();
+            const newPlayerId = 'p_' + Date.now() + Math.random().toString(36).substr(2, 5);
             const newPlayer: Player = {
                 id: newPlayerId,
                 name: myName,
@@ -234,11 +264,9 @@ const App: React.FC = () => {
                 currentAnswer: null
             };
 
-            // O'yinchini bazaga qo'shish
             await updateDoc(gameRef, { players: [...data.players, newPlayer] });
             
-            // Muvaffaqiyatli bo'lsa state-larni o'zgartiramiz
-            setGameId(joinCode); // Endi listener ishga tushadi
+            setGameId(joinCode);
             setMyPlayerId(newPlayerId);
             setMode('LOBBY');
         } else {
@@ -246,7 +274,9 @@ const App: React.FC = () => {
         }
     } catch (e) {
         console.error(e);
-        alert("Xatolik yuz berdi");
+        alert("Internet xatosi");
+    } finally {
+      setIsJoining(false);
     }
   };
 
@@ -257,6 +287,10 @@ const App: React.FC = () => {
     );
     await updateDoc(doc(db, 'games', gameId), { players: updatedPlayers });
   };
+
+  // --- YARDAMCHI FUNKSIYA: VISUAL LABEL ---
+  // Index 0 -> A, Index 1 -> B, ...
+  const getLabel = (index: number) => String.fromCharCode(65 + index);
 
   // --- RENDER ---
 
@@ -303,17 +337,51 @@ const App: React.FC = () => {
         <div className="bg-white p-6 rounded-2xl shadow-xl max-w-md w-full space-y-4">
           <h2 className="text-xl font-bold text-center">Sozlamalar</h2>
           <input type="text" placeholder="Ismingiz..." className="w-full p-3 border rounded-lg" value={myName} onChange={e => setMyName(e.target.value)} />
-          <div className="grid grid-cols-2 gap-4">
-            <div><label className="text-sm font-bold">Savol Soni</label><input type="number" className="w-full p-3 border rounded-lg" value={qCount} onChange={e => setQCount(Number(e.target.value))} /></div>
-            <div><label className="text-sm font-bold">Vaqt (sek)</label><input type="number" className="w-full p-3 border rounded-lg" value={timeLimit} onChange={e => setTimeLimit(Number(e.target.value))} /></div>
+          
+          {/* YANGI: Savollar oralig'ini tanlash */}
+          <div className="bg-gray-50 p-3 rounded-lg border">
+             <p className="text-xs font-bold text-gray-500 mb-2 uppercase">Savollar Oralig'i (Jami: {QUESTIONS.length})</p>
+             <div className="flex items-center gap-2">
+                <div className='flex-1'>
+                    <label className="text-xs">Boshlanish</label>
+                    <input type="number" min={1} max={QUESTIONS.length} className="w-full p-2 border rounded" value={rangeStart} onChange={e => setRangeStart(Number(e.target.value))} />
+                </div>
+                <span className='mt-4'>-</span>
+                <div className='flex-1'>
+                    <label className="text-xs">Tugash</label>
+                    <input type="number" min={1} max={QUESTIONS.length} className="w-full p-2 border rounded" value={rangeEnd} onChange={e => setRangeEnd(Number(e.target.value))} />
+                </div>
+             </div>
+             <p className="text-xs text-blue-600 mt-1 font-medium">
+                Tanlandi: {Math.max(0, rangeEnd - rangeStart + 1)} ta savol
+             </p>
           </div>
-          <select className="w-full p-3 border rounded-lg" value={shuffleMode} onChange={(e: any) => setShuffleMode(e.target.value)}>
-            <option value="NONE">Aralashmasin</option>
-            <option value="BOTH">Hammasi Aralashsin</option>
-          </select>
-          <div className="flex gap-3">
+
+          <div className="flex gap-2">
+            <div className="flex-1">
+                <label className="text-xs font-bold">Vaqt (sek)</label>
+                <input type="number" className="w-full p-3 border rounded-lg" value={timeLimit} onChange={e => setTimeLimit(Number(e.target.value))} />
+            </div>
+            <div className="flex-[2]">
+                <label className="text-xs font-bold">Aralashtirish</label>
+                <select className="w-full p-3 border rounded-lg text-sm" value={shuffleMode} onChange={(e: any) => setShuffleMode(e.target.value)}>
+                    <option value="NONE">Aralashmasin</option>
+                    <option value="QUESTIONS">Savollar</option>
+                    <option value="OPTIONS">Variantlar</option>
+                    <option value="BOTH">Hammasi</option>
+                </select>
+            </div>
+          </div>
+          
+          <div className="flex gap-3 pt-2">
             <button onClick={() => setMode('HOME')} className="flex-1 py-3 bg-gray-100 font-bold">Bekor</button>
-            <button onClick={createGame} className="flex-[2] py-3 bg-blue-600 text-white font-bold rounded-lg">Yaratish</button>
+            <button 
+              onClick={createGame} 
+              disabled={isJoining}
+              className={`flex-[2] py-3 text-white font-bold rounded-lg ${isJoining ? 'bg-blue-400 cursor-not-allowed' : 'bg-blue-600'}`}
+            >
+              {isJoining ? '...' : 'Yaratish'}
+            </button>
           </div>
         </div>
       </div>
@@ -340,8 +408,16 @@ const App: React.FC = () => {
             onChange={e => setJoinCode(e.target.value)} 
           />
           <div className="flex gap-3">
-            <button onClick={() => setMode('HOME')} className="flex-1 py-3 bg-gray-100 font-bold">Ortga</button>
-            <button onClick={joinGame} className="flex-[2] py-3 bg-green-600 text-white font-bold rounded-lg">Kirish</button>
+            <button onClick={() => setMode('HOME')} disabled={isJoining} className="flex-1 py-3 bg-gray-100 font-bold">Ortga</button>
+            <button 
+              onClick={joinGame} 
+              disabled={isJoining} 
+              className={`flex-[2] py-3 text-white font-bold rounded-lg transition-all ${
+                isJoining ? 'bg-green-400 cursor-wait' : 'bg-green-600 hover:bg-green-700'
+              }`}
+            >
+              {isJoining ? '...' : 'Kirish'}
+            </button>
           </div>
         </div>
       </div>
@@ -404,7 +480,6 @@ const App: React.FC = () => {
     const currentQ = game.questions[game.currentQuestionIndex];
     const myPlayer = game.players.find(p => p.id === myPlayerId);
     
-    // Statistika
     const answeredCount = game.players.filter(p => p.currentAnswer !== null).length;
     const totalPlayers = game.players.length;
 
@@ -415,7 +490,7 @@ const App: React.FC = () => {
     return (
       <div className="min-h-screen bg-gray-100 flex flex-col relative">
         
-        {/* MODAL: O'YINCHILAR RO'YXATI */}
+        {/* MODAL: PLAYERS */}
         {showPlayerList && (
           <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-sm" onClick={() => setShowPlayerList(false)}>
             <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm overflow-hidden animate-fade-in-up" onClick={e => e.stopPropagation()}>
@@ -456,11 +531,11 @@ const App: React.FC = () => {
            <div className="flex justify-between items-center mb-2">
              <div className="flex flex-col">
                 <span className="text-xs text-gray-500 font-bold uppercase">Savol</span>
+                {/* 1, 2, 3 deb chiqadi (61-90 tanlansa ham 1 dan boshlanadi) */}
                 <span className="font-bold text-gray-800 text-lg leading-none">{game.currentQuestionIndex + 1}<span className="text-gray-400 text-sm">/{game.questions.length}</span></span>
              </div>
              
              <div className="flex items-center gap-3">
-                {/* Odamchalar Statistikasi */}
                <button 
                  onClick={() => setShowPlayerList(true)}
                  className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-bold transition border ${
@@ -471,7 +546,6 @@ const App: React.FC = () => {
                  <span>{answeredCount}/{totalPlayers}</span>
                </button>
 
-               {/* Vaqt */}
                {game.status === 'QUESTION' && (
                  <div className={`font-mono font-bold text-xl min-w-[3ch] text-right ${game.timer <= 5 ? 'text-red-600 animate-pulse' : 'text-blue-600'}`}>
                    {game.timer}
@@ -480,7 +554,6 @@ const App: React.FC = () => {
              </div>
            </div>
 
-           {/* Progress Bar */}
            {game.status === 'QUESTION' && (
              <div className="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden">
                <div 
@@ -497,10 +570,17 @@ const App: React.FC = () => {
           </div>
 
           <div className="space-y-3">
-             {currentQ.options.map(opt => {
+             {/* 
+                Variantlarni ko'rsatish logikasi:
+                Biz 'opt.id' ni yashiramiz va uning o'rniga loop index-dan foydalanib A, B, C, D harflarini yasaymiz.
+             */}
+             {currentQ.options.map((opt, index) => {
                const isSelected = myPlayer?.currentAnswer === opt.id;
                const showResult = game.status === 'REVIEW';
                const isCorrect = opt.isCorrect;
+               
+               // VISUAL LABEL: 0->A, 1->B, 2->C, 3->D
+               const visualLabel = getLabel(index);
                
                let btnClass = "bg-white border-gray-200 text-gray-600 hover:border-blue-300 shadow-sm";
                
@@ -519,7 +599,10 @@ const App: React.FC = () => {
                    onClick={() => submitAnswer(opt.id)}
                    className={`w-full p-4 rounded-xl border-2 text-left transition-all duration-200 flex items-center gap-3 relative overflow-hidden ${btnClass}`}
                  >
-                   <span className={`font-bold uppercase w-8 h-8 flex items-center justify-center rounded-lg text-sm ${showResult && isCorrect ? 'bg-green-200 text-green-800' : 'bg-gray-100 text-gray-500'}`}>{opt.id}</span>
+                   {/* Bu yerda visualLabel (A, B, C...) ishlatilmoqda */}
+                   <span className={`font-bold uppercase w-8 h-8 flex items-center justify-center rounded-lg text-sm ${showResult && isCorrect ? 'bg-green-200 text-green-800' : 'bg-gray-100 text-gray-500'}`}>
+                      {visualLabel}
+                   </span>
                    <span className="font-medium flex-1">{opt.text}</span>
                    {showResult && isCorrect && <span className="text-xl animate-bounce">✅</span>}
                    {showResult && isSelected && !isCorrect && <span className="text-xl">❌</span>}
@@ -535,17 +618,20 @@ const App: React.FC = () => {
              </div>
           )}
 
-          {isHost && (
+          {game.status === 'REVIEW' && (
+             <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-6 py-3 rounded-full shadow-lg z-50 flex items-center gap-3 animate-bounce">
+                <span>Keyingi savolga o'tilmoqda...</span>
+                <div className="bg-white text-gray-800 w-6 h-6 rounded-full flex items-center justify-center font-bold text-sm">
+                   ⏳
+                </div>
+             </div>
+          )}
+
+          {isHost && game.status === 'QUESTION' && (
             <div className="fixed bottom-0 left-0 w-full bg-white p-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] border-t flex justify-center z-40">
-               {game.status === 'QUESTION' ? (
                  <button onClick={() => handlePhaseChange(true)} className="w-full max-w-md px-6 py-3 bg-red-100 text-red-600 rounded-xl font-bold hover:bg-red-200 transition">
                    Vaqtni to'xtatish ⏹
                  </button>
-               ) : (
-                 <button onClick={() => handlePhaseChange()} className="w-full max-w-md px-10 py-3 bg-blue-600 text-white rounded-xl font-bold shadow-lg hover:bg-blue-700 hover:-translate-y-1 transition-all">
-                   Keyingi Savol ➡️
-                 </button>
-               )}
             </div>
           )}
         </div>
