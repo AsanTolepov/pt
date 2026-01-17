@@ -4,1002 +4,1502 @@ import { Question } from './types';
 export const QUESTIONS: Question[] = [
   {
     id: 1,
-    text: "Programmalıq támiynat evolyuсiyası neni óz ishine aladı?",
+    text: "Sistemalı programmalastırıwdıń eń tiykarǵı anıqlaması neni bildiredi?",
     options: [
-      { id: 'a', text: "Programmalıq sistemalardı jaratıw, qollap-quwatlaw hám jaqsılaw ushın qollanılatuǵın texnologiyalar hám metodologiyalardıń rawajlanıwın", isCorrect: true },
-      { id: 'b', text: "Bar bolǵan sistemalardı saqlaw hám olarǵa xızmet kórsetiwdi qollap-quwatlaw", isCorrect: false },
-      { id: 'c', text: "Jańa programmalıq sistemalardı islep shıǵıw ushın qollanılatuǵın texnologiyalar hám metodologiyalardıń rawajlanıwın", isCorrect: false },
-      { id: 'd', text: "Sistemalardı jańalaw hám olarǵa jańa funkсiyalar qosıw ushın qollanılatuǵın texnologiyalardıń rawajlanıwın", isCorrect: false }
+      { id: 'a', text: "Resurslardı basqarıwshı programmalıq támiynat.", isCorrect: true },
+      { id: 'b', text: "Paydalanıwshıǵa baǵdarlanǵan hám kóbinese grafik interfeysli qollanba programmalardı jaratıw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana úlken maǵlıwmatlar bazası menen islesiw.", isCorrect: false },
+      { id: 'd', text: "Joqarı dárejeli programma tilleri interfeysin jazıw hám olardı tarmaqqa biriktiriw.", isCorrect: false }
     ]
   },
   {
     id: 2,
-    text: "Programmalıq támiynat qanday ózgerislerge biyimlesedi?",
+    text: "Operacion sistemalardaǵı sistemalı programmalıq támiynat roli qaysı?",
     options: [
-      { id: 'a', text: "Jańa talaplar hám texnologiyalıq jetiskenliklerge", isCorrect: true },
-      { id: 'b', text: "Jańa programmalastırıw tilleri hám freymvorklar", isCorrect: false },
-      { id: 'c', text: "Paydalanıwshılardıń jańa talaplarına", isCorrect: false },
-      { id: 'd', text: "Hesh qanday ózgerislerge", isCorrect: false }
+      { id: 'a', text: "Apparatlıq támiynat penen óz-ara tásir.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana jańa grafik interfeysti usınıs etiw.", isCorrect: false },
+      { id: 'c', text: "Maǵlıwmatlardı tek ǵana aralıqtan jiberiw.", isCorrect: false },
+      { id: 'd', text: "Programmalardı tek ǵana interpretaciyalaw hám tezligin sheklew.", isCorrect: false }
     ]
   },
   {
     id: 3,
-    text: "Nátiyjeli konstrukсiyalaw nelerdi óz ishine aladı?",
+    text: "Sistemalı programmalastırıwda C tili ne ushın áhmiyetli?",
     options: [
-      { id: 'a', text: "Nátiyjeli konstrukсiyalaw programmalastırıw bilimlerin hám sistemanıń qáwipsizligi, ónimdarlıǵı, masshtablasıwı hám qollap-quwatlanıwın óz ishine aladı", isCorrect: true },
-      { id: 'b', text: "Nátiyjeli konstrukсiyalaw programmalastırıw bilimlerin hám sistemanıń qáwipsizligi óz ishine aladı", isCorrect: false },
-      { id: 'c', text: "Nátiyjeli konstrukсiyalaw programmalastırıw tarawındaǵı bilimlerdi, masshtablasıwı hám qollap-quwatlanıwın óz ishine aladı", isCorrect: false },
-      { id: 'd', text: "Nátiyjeli konstrukсiyalaw sistemanıń ónimdarlıǵın óz ishine aladı", isCorrect: false }
+      { id: 'a', text: "Tómengi dárejeli funkciyalarǵa kirisiw.", isCorrect: true },
+      { id: 'b', text: "Ol eń jańa hám qolaylı til bolǵanı ushın.", isCorrect: false },
+      { id: 'c', text: "Ol tek ǵana tarmaqta qollanıladı.", isCorrect: false },
+      { id: 'd', text: "Ol virtual yadtı basqara almaydı.", isCorrect: false }
     ]
   },
   {
     id: 4,
-    text: "Kod sapası sistemanıń qanday táreplerine tikkeley tásir etedi?",
+    text: "Low-Level (Tómengi dárejeli) dep atalıwınıń sebebi nede?",
     options: [
-      { id: 'a', text: "Ónimdarlıǵına, isenimliligine hám masshtablasıwına", isCorrect: true },
-      { id: 'b', text: "Isenimliligine, masshtablasıwına hám apparatlıq támiyinlewge", isCorrect: false },
-      { id: 'c', text: "Ónimdarlıǵına, fizikalıq infrastrukturaǵa hám apparatlıq támiyinlewge", isCorrect: false },
-      { id: 'd', text: "Masshtablasıwına, marketing hám satıw strategiyasına", isCorrect: false }
+      { id: 'a', text: "Apparatlıq támiynatqa jaqın islew.", isCorrect: true },
+      { id: 'b', text: "Keshlewshi mexanizmlerin bilmegenligi ushın.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana tarmaq baylanısın qollanıw.", isCorrect: false },
+      { id: 'd', text: "Hár dayım qátelerdi shıǵarıwı sebepli.", isCorrect: false }
     ]
   },
   {
     id: 5,
-    text: "Programmalıq ónimniń turaqlılıǵı hám qolaylıǵı nege baylanıslı?",
+    text: "Sistemalı programmalastırıwdıń tiykarǵı maqseti nede?",
     options: [
-      { id: 'a', text: "Arxitekturalıq sheshimlerdiń sapasına hám kodtıń dúzilisine", isCorrect: true },
-      { id: 'b', text: "Kodtıń dúzilisine hám paydalanıwshı tájriybesine", isCorrect: false },
-      { id: 'c', text: "Arxitekturalıq sheshimlerdiń sapasına hám komanda quramına", isCorrect: false },
-      { id: 'd', text: "Programmistlerdiń tájiriybesine, dizayn hám paydalanıwshı interfeysine", isCorrect: false }
+      { id: 'a', text: "OS resursların nátiyjeli basqarıw.", isCorrect: true },
+      { id: 'b', text: "Maǵlıwmatlar bazasın basqarıwǵa járdem beriw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana joqarı dárejeli programmalastırıw.", isCorrect: false },
+      { id: 'd', text: "Internet brauzerlerin optimallastırıw hám hızmet kórsetiw.", isCorrect: false }
     ]
   },
   {
     id: 6,
-    text: "Jaratılǵan programmalıq ónim qanday qásiyetlerge iye bolıwı kerek?",
+    text: "Processlerdi basqarıw hám yadtı bólistiriw sıyaqlı tiykarǵı wazıypalar qaysı bólimge kiredi?",
     options: [
-      { id: 'a', text: "Ańsat sáykeslestiriliwi, sınawdan ótkeriliwi hám ekspluataсiyalawǵa jaylastırılıwı múmkin bolıwı kerek", isCorrect: true },
-      { id: 'b', text: "Ańsat sáykeslestiriliwi, áste islewi hám ekspluataсiyalawǵa jaylastırılıwı múmkin bolıwı kerek", isCorrect: false },
-      { id: 'c', text: "Ańsat sáykeslestiriliwi, qolaysız interfeyske iye bolıwı hám ekspluataсiyalawǵa jaylastırılıwı múmkin bolıwı kerek", isCorrect: false },
-      { id: 'd', text: "Ańsat sáykeslestiriliwi, sınawdan ótkerilmewi hám ekspluataсiyalawǵa jaylastırılıwı múmkin bolıwı kerek", isCorrect: false }
+      { id: 'a', text: "Kernel (Yad)", isCorrect: true },
+      { id: 'b', text: "User Application (Paydalanıwshı qollanbası)", isCorrect: false },
+      { id: 'c', text: "Maǵlıwmatlar bazası", isCorrect: false },
+      { id: 'd', text: "Tarmaq protokolları", isCorrect: false }
     ]
   },
   {
     id: 7,
-    text: "Konstrukсiyalaw basqıshı qanday basqıshlar menen tıǵız baylanıslı?",
+    text: "System Calls (Sistema shaqırıwları) ni qollanıw ne ushın zárúr?",
     options: [
-      { id: 'a', text: "Proektlestiriw, testlew hám qollap-quwatlaw menen", isCorrect: true },
-      { id: 'b', text: "Kadrlardı basqarıw, komanda qurıw hám testlew menen", isCorrect: false },
-      { id: 'c', text: "Proektlestiriw, marketing hám satıw strategiyası menen", isCorrect: false },
-      { id: 'd', text: "Paydalanıwshılardı oqıtıw hám qollap-quwatlaw menen", isCorrect: false }
+      { id: 'a', text: "Qáwipsiz yad funksiyalarına kirisiw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana maǵlıwmatlardı arxivlew.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana grafik interfeysti kórsetiw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana dinamikalıq yadtı bosatıw hám tarmaqqa shıǵıw.", isCorrect: false }
     ]
   },
   {
     id: 8,
-    text: "Komanda jumısında nelerden paydalanıw kerek?",
+    text: "Kernel (Yad) yad maydanın Paydalanıwshı yad maydanınan qalay ajıratadı?",
     options: [
-      { id: 'a', text: "Zamanagóy metodologiya hám instrumentlerden", isCorrect: true },
-      { id: 'b', text: "Eski instrumentlerden hám jeke básekelesiwden", isCorrect: false },
-      { id: 'c', text: "Eski metodologiyalardan hám jeke básekelesiwden", isCorrect: false },
-      { id: 'd', text: "Jańa ideyalardan hám komanda aǵzalarınıń tájiriybesinen", isCorrect: false }
+      { id: 'a', text: "Process rejimleri arqalı.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana process atları arqalı.", isCorrect: false },
+      { id: 'c', text: "Fayl sistemasında bólek direktoriyalar jaratıw.", isCorrect: false },
+      { id: 'd', text: "Tarmaq adresin ózgertiw arqalı.", isCorrect: false }
     ]
   },
   {
     id: 9,
-    text: "Úlken programmalıq qurallarda neler boladı?",
+    text: "Process ID (PID) hám Kirisiw Huqıqları sıyaqlı tiykarǵı maǵlıwmatlar qaysı bólimde saqlanadı?",
     options: [
-      { id: 'a', text: "Júzlegen hám mıńlaǵan komponent-modullar", isCorrect: true },
-      { id: 'b', text: "Qısqa kod bazası boladı", isCorrect: false },
-      { id: 'c', text: "Sheklengen funkсionallıq iye bolıwı", isCorrect: false },
-      { id: 'd', text: "Eki hám úsh komponent-modullar", isCorrect: false }
+      { id: 'a', text: "Operaciyalıq Sistema Yadı.", isCorrect: true },
+      { id: 'b', text: "Fizikalıq disk.", isCorrect: false },
+      { id: 'c', text: "Tarmaq routeri.", isCorrect: false },
+      { id: 'd', text: "Printer drayveri.", isCorrect: false }
     ]
   },
   {
     id: 10,
-    text: "“Programmalıq támiynattı konstrukсiyalaw” qanday proсesslerdi óz ishine aladı?",
+    text: "Sistemalı programmalastırıw bulıtlı esaplawlarda ne ushın áhmiyetli?",
     options: [
-      { id: 'a', text: "Kodlaw, verifikaсiyalaw, modulli testlew, integraсiyalıq testlew hám dúzetiw", isCorrect: true },
-      { id: 'b', text: "Kodlaw, verifikaсiyalaw, modulli testlew, liсenziya alıw hám dúzetiw", isCorrect: false },
-      { id: 'c', text: "Kodlaw, verifikaсiyalaw, integraсiyalıq testlew, liсenziya alıw, satıw hám dúzetiw", isCorrect: false },
-      { id: 'd', text: "Kodlaw, verifikaсiyalaw, modulli testlew, integraсiyalıq testlew hám talaplardı anıqlaw", isCorrect: false }
+      { id: 'a', text: "Virtualizaciyalaw texnologiyaların basqarıw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana web-brauzerlerdi islep shıǵıw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana súwretlerdi redaktorlaw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana elektr energiyasın basqarıw hám esap-kitap islew.", isCorrect: false }
     ]
   },
   {
     id: 11,
-    text: "Proektlestiriw, konstrukсiyalaw hám testlew arasındaǵı shegaralardı anıqlaw nege qıyın?",
+    text: "Faylǵa tiyisli metadata (huqıqlar, ólshemi) neniń ishinde saqlanadı?",
     options: [
-      { id: 'a', text: "Olar ómir cikli proсessleriniń birden-bir kompleksine baylanıslı bolǵanı ushın", isCorrect: true },
-      { id: 'b', text: "Olar bir-birine baylanıssız bolǵanı ushın", isCorrect: false },
-      { id: 'c', text: "Olar hár qıylı proсessler bolǵanı ushın", isCorrect: false },
-      { id: 'd', text: "Olar tek texnikalıq proсessler bolǵanı ushın", isCorrect: false }
+      { id: 'a', text: "Inode", isCorrect: true },
+      { id: 'b', text: "Superblok", isCorrect: false },
+      { id: 'c', text: "Maǵlıwmatlar blogı", isCorrect: false },
+      { id: 'd', text: "Disk buferi", isCorrect: false }
     ]
   },
   {
     id: 12,
-    text: "Tómendegilerdiń qaysısı programmalıq támiynattı konstrukсiyalawdıń fundamentallıq tiykarlarına kirmeydi?",
+    text: "Fayl sistemasınıń qaysı bólimi fayllar hám direktoriyalardıń strukturasın saqlaydı?",
     options: [
-      { id: 'a', text: "Qátelerdi tabıw hám dúzetiw", isCorrect: true },
-      { id: 'b', text: "Ózgerislerdi kútiw", isCorrect: false },
-      { id: 'c', text: "Tekseriw imkaniyatı menen konstrukсiyalaw", isCorrect: false },
-      { id: 'd', text: "Quramalılıqtı minimallastırıw", isCorrect: false }
+      { id: 'a', text: "Inode", isCorrect: true },
+      { id: 'b', text: "Superblok", isCorrect: false },
+      { id: 'c', text: "Kirisiw buferi", isCorrect: false },
+      { id: 'd', text: "Process kestesi", isCorrect: false }
     ]
   },
   {
     id: 13,
-    text: "Programmalıq támiynattı konstrukсiyalawda “quramalılıqtı minimallastırıw” ne mánisti ańlatadı?",
+    text: "Fayl operaciyaların tezlestiriw ushın qollanılatuǵın mexanizm qaysı?",
     options: [
-      { id: 'a', text: "Programmanıń strukturasın ıqshamlastırıw hám túsiniwge ańsat etiw", isCorrect: true },
-      { id: 'b', text: "Programmanı múmkin bolǵanınsha qısqa etip jazıw", isCorrect: false },
-      { id: 'c', text: "Programmaǵa tek zárúr funkсiyalardı qosıw hám túsiniwge ańsat etiw", isCorrect: false },
-      { id: 'd', text: "Programmanı múmkin bolǵanınsha qısqa etip jazıw hám tek bir tilde jazıw", isCorrect: false }
+      { id: 'a', text: "Keshlewshi hám Buferlew", isCorrect: true },
+      { id: 'b', text: "Processlerdiń uyqılawı", isCorrect: false },
+      { id: 'c', text: "Tek ǵana DMA", isCorrect: false },
+      { id: 'd', text: "Tarmaq baylanısın óshiriw", isCorrect: false }
     ]
   },
   {
     id: 14,
-    text: "Qollanılatuǵın standartlar neshe toparǵa bólinedi?",
+    text: "Linux-ta fayldı ashıw ushın qollanılatuǵın sistema shaqırıǵı qaysı?",
     options: [
-      { id: 'a', text: "2", isCorrect: true },
-      { id: 'b', text: "1", isCorrect: false },
-      { id: 'c', text: "3", isCorrect: false },
-      { id: 'd', text: "4", isCorrect: false }
+      { id: 'a', text: "open()", isCorrect: true },
+      { id: 'b', text: "read()", isCorrect: false },
+      { id: 'c', text: "write()", isCorrect: false },
+      { id: 'd', text: "close()", isCorrect: false }
     ]
   },
   {
     id: 15,
-    text: "Qaysı strategiya konstrukсiyalawdiń basqıshlarınıń sızıqlı izbe-izligi bolıp tabıladı?",
+    text: "Fayldıń aktuallıq orının ózgertiw ushın qollanılatuǵın sistema shaqırıǵı qaysı?",
     options: [
-      { id: 'a', text: "Sarqırama strategiyası", isCorrect: true },
-      { id: 'b', text: "Evolyuсiyalıq strategiyası", isCorrect: false },
-      { id: 'c', text: "Inkrementli strategiyası", isCorrect: false },
-      { id: 'd', text: "Iterativli strategiyası", isCorrect: false }
+      { id: 'a', text: "lseek()", isCorrect: true },
+      { id: 'b', text: "fseek()", isCorrect: false },
+      { id: 'c', text: "move_file()", isCorrect: false },
+      { id: 'd', text: "change_offset()", isCorrect: false }
     ]
   },
   {
     id: 16,
-    text: "Evolyuсiyalıq strategiyada:",
+    text: "Hard Link (Qattı silteme) neni ańlatadı?",
     options: [
-      { id: 'a', text: "Talaplar versiyalardı islep shıǵıw nátiyjesinde anıqlastırıladı", isCorrect: true },
-      { id: 'b', text: "Talaplar tek birinshi versiyada anıqlanadı", isCorrect: false },
-      { id: 'c', text: "Talaplar ózgermeydi", isCorrect: false },
-      { id: 'd', text: "Barlıq talaplar proсesstiń basında anıqlanadı", isCorrect: false }
+      { id: 'a', text: "Bir Inode-qa bir neshe silteme.", isCorrect: true },
+      { id: 'b', text: "Tek basqa bir fayl atın saqlaytuǵın fayl.", isCorrect: false },
+      { id: 'c', text: "Tek tarmaq arqalı bólistiriletuǵın fayl.", isCorrect: false },
+      { id: 'd', text: "Tek jazıw huqıǵı bar faylǵa sıltaw.", isCorrect: false }
     ]
   },
   {
     id: 17,
-    text: "Programmalıq táminattı islep shıǵıw proсessiniń eń eski paradigması qaysı?",
+    text: "Fayl sistemasındaǵı Direktoriyalar texnikalıq jaqtan qalay kórilgen?",
     options: [
-      { id: 'a', text: "Klassikalıq ómir ciklı", isCorrect: true },
-      { id: 'b', text: "Spirallı model", isCorrect: false },
-      { id: 'c', text: "Prototiplew modeli", isCorrect: false },
-      { id: 'd', text: "Iterativli model", isCorrect: false }
+      { id: 'a', text: "Fayl atları hám Inode nomerleri jazılǵan arnawlı fayllar.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana tarmaq adreslerin saqlaydı.", isCorrect: false },
+      { id: 'c', text: "Tek processlerdiń sanın saqlaydı.", isCorrect: false },
+      { id: 'd', text: "Tek processor registrleriniń maǵlıwmatların saqlaytuǵın jayı.", isCorrect: false }
     ]
   },
   {
     id: 18,
-    text: "Klassikalıq ómir ciklde keyingi basqıshqa ótiw qashan boladı?",
+    text: "OS diskten maǵlıwmatlardı oqıw ushın qaysı birlikti qollanadı?",
     options: [
-      { id: 'a', text: "Aldıńǵı basqısh tolıq juwmaqlanǵannan keyin", isCorrect: true },
-      { id: 'b', text: "Hár basqıshtıń yarımı juwmaqlanǵannan keyin", isCorrect: false },
-      { id: 'c', text: "Basqıshlar arasında ótiw joq", isCorrect: false },
-      { id: 'd', text: "Hámme basqısh bir waqıtta baslanadı", isCorrect: false }
+      { id: 'a', text: "Disk Blokları", isCorrect: true },
+      { id: 'b', text: "Bayt", isCorrect: false },
+      { id: 'c', text: "Bit", isCorrect: false },
+      { id: 'd', text: "Millisekund", isCorrect: false }
     ]
   },
   {
     id: 19,
-    text: "Klassikalıq ómir cikliniń qaysı kemshiligi haqıyqıy proektlerge baylanıslı?",
+    text: "Synchronous I/O (Sinxron Kirgiziw/Shıǵarıw) neni bildiredi?",
     options: [
-      { id: 'a', text: "Standart qádemler izbe-izliginen shetke shıǵıwdı talap etiwi", isCorrect: true },
-      { id: 'b', text: "Buyırtpashınıń talaplarınıń tolıq anıqlanbaǵanlıǵı", isCorrect: false },
-      { id: 'c', text: "Nátiyjelerdiń tez berilmewi", isCorrect: false },
-      { id: 'd', text: "Qımbat bolıwı", isCorrect: false }
+      { id: 'a', text: "Operaciya tamamlanǵanǵa shekem programmanıń kútip turıwı.", isCorrect: true },
+      { id: 'b', text: "I/O tamamlanıwın kutpey, birden atqarıwdı dawam ettiriw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana tarmaq arqalı maǵlıwmat almasıw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana bir process islew shárayatı.", isCorrect: false }
     ]
   },
   {
     id: 20,
-    text: "Klassikalıq ómir ciklinde programmalıq támiynatqa qoyılatuǵın talaplar qanday bolıwı kerek?",
+    text: "Fayl sistemasınıń Journaling (Jurnal júritiw) mexanizmi ne ushın qollanıladı?",
     options: [
-      { id: 'a', text: "Anıq táriyplengen bolıwı kerek", isCorrect: true },
-      { id: 'b', text: "Ózgermeli bolıwı kerek", isCorrect: false },
-      { id: 'c', text: "Anıq emes bolıwı kerek", isCorrect: false },
-      { id: 'd', text: "Kelisilgen bolıwı kerek", isCorrect: false }
+      { id: 'a', text: "Sistemalıq qátelerden qorǵaw.", isCorrect: true },
+      { id: 'b', text: "Fayldıń ólshemin ózgertiw ushın.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana maǵlıwmatlardı sıǵıw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana processlerdi uyqlatıw.", isCorrect: false }
     ]
   },
   {
     id: 21,
-    text: "RAD modelin úlken proektlerde qollanıwdıń qanday kemshiligi bar?",
+    text: "Processorlar isleytuǵın eń tiykarǵı birlik qaysı?",
     options: [
-      { id: 'a', text: "Áhmiyetli adam resursların talap etedi", isCorrect: true },
-      { id: 'b', text: "Kóp waqıt talap etedi", isCorrect: false },
-      { id: 'c', text: "Qımbat texnologiyalar kerek boladı", isCorrect: false },
-      { id: 'd', text: "Nátiyjeleri sapasız boladı", isCorrect: false }
+      { id: 'a', text: "Buyrıqlar (Instructions)", isCorrect: true },
+      { id: 'b', text: "Operaciyalıq sistema versiyası", isCorrect: false },
+      { id: 'c', text: "Fayl atı", isCorrect: false },
+      { id: 'd', text: "Tarmaq protokolları hám soketler.", isCorrect: false }
     ]
   },
   {
     id: 22,
-    text: "RAD modeli qanday qosımshalar ushın qollanıwǵa boladı?",
+    text: "CPU-ǵa I/O qurılmasınan yamasa yadqa kirisiwdegi qáteni bildiretuǵın signallar qaysı?",
     options: [
-      { id: 'a', text: "Ayırım modullerge dekompoziсiyalanıwı múmkin bolǵan qosımshalar ushın", isCorrect: true },
-      { id: 'b', text: "Tek úlken qosımshalar ushın", isCorrect: false },
-      { id: 'c', text: "Barlıq qosımshalar ushın", isCorrect: false },
-      { id: 'd', text: "Tek kishi qosımshalar ushın", isCorrect: false }
+      { id: 'a', text: "Úzilisler (Interrupts)", isCorrect: true },
+      { id: 'b', text: "Process ID", isCorrect: false },
+      { id: 'c', text: "Soket nomeri", isCorrect: false },
+      { id: 'd', text: "Fayl deskriptorı", isCorrect: false }
     ]
   },
   {
     id: 23,
-    text: "RAD-proсessi qanday jaǵdaylarda tolıq funkсional sistemanı júdá qısqa waqıtta jaratıwǵa múmkinshilik beredi?",
+    text: "I/O qurılmasınıń Processor hám OS aralasuwınsız Yadqa kirisiwine múmkinshilik beretuǵın mexanizm qaysı?",
     options: [
-      { id: 'a', text: "Talaplar tolıq anıqlanǵan hám proekt oblasti sheklengen bolǵanda", isCorrect: true },
-      { id: 'b', text: "Talaplar tolıq anıqlanbaǵan hám proekt oblasti keń bolǵanda", isCorrect: false },
-      { id: 'c', text: "Talaplar tolıq anıqlanbaǵan hám proekt oblasti sheklengen bolǵanda", isCorrect: false },
-      { id: 'd', text: "Talaplar tolıq anıqlanǵan hám proekt oblasti keń bolǵanda", isCorrect: false }
+      { id: 'a', text: "DMA (Direct Memory Access)", isCorrect: true },
+      { id: 'b', text: "CPU Registerleri", isCorrect: false },
+      { id: 'c', text: "Process Kestesi", isCorrect: false },
+      { id: 'd', text: "Semaphor", isCorrect: false }
     ]
   },
   {
     id: 24,
-    text: "Spiral modeliniń tiykarǵı ayırmashılıǵı nede?",
+    text: "Processor registrlerınıń tiykarǵı wazıypası nede?",
     options: [
-      { id: 'a', text: "Klassikalıq ómir ciklı, maketlew hám táwekelshilik analizin birgelikte qollanıwında", isCorrect: true },
-      { id: 'b', text: "Evolyuсiyalıq strategiya, maketlew hám táwekelshilik analizin birgelikte qollanıwında", isCorrect: false },
-      { id: 'c', text: "Inkrementli model, maketlew hám táwekelshilik analizin birgelikte qollanıwında", isCorrect: false },
-      { id: 'd', text: "Iterativli strategiya, maketlew hám táwekelshilik analizin birgelikte qollanıwında", isCorrect: false }
+      { id: 'a', text: "Maǵlıwmatlar hám adreslerdi waqtınsha saqlaw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana fayl maǵlıwmatların arxivlew.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana tarmaq baǵdarlawın basqarıw.", isCorrect: false },
+      { id: 'd', text: "Fayl sistemasınıń tolıq kóshirmesin saqlaw.", isCorrect: false }
     ]
   },
   {
     id: 25,
-    text: "Programmalıq támiynat evolyuсiyası proсessinde ne ózgeredi?",
+    text: "Little-Endian hám Big-Endian neni ańlatadı?",
     options: [
-      { id: 'a', text: "Programmalıq támiynattı islep shıǵıwdıń kóz-qarasları, instrumentleri hám ámeliyatları", isCorrect: true },
-      { id: 'b', text: "Programmalıq támiynattı islep shıǵıwdıń tiykarǵı maqsetleri hám instrumentleri", isCorrect: false },
-      { id: 'c', text: "Programmalıq támiynattı islep shıǵıwdıń sapa talapları", isCorrect: false },
-      { id: 'd', text: "Programmalıq támiynattı islep shıǵıwdıń instrumentleri hám ámeliyatları", isCorrect: false }
+      { id: 'a', text: "Yadta baytlar tártibin saqlaw usılı.", isCorrect: true },
+      { id: 'b', text: "Tarmaq tezligin ólshew birligi.", isCorrect: false },
+      { id: 'c', text: "Fayl sistemasınıń ólshemi.", isCorrect: false },
+      { id: 'd', text: "Processlerdiń kólemi.", isCorrect: false }
     ]
   },
   {
     id: 26,
-    text: "Programmalıq támiynattı konstrukсiyalaw proсessi nege oraylıq buwın dep esaplanadı?",
+    text: "MMIO (Memory-Mapped I/O) neni bildiredi?",
     options: [
-      { id: 'a', text: "Sebebi bul basqıshta joybarlaw hám tallaw basqıshına qoyılǵan ideya hám sheshimler programmalıq támiynattıń funkсional bólimlerine aylanadı", isCorrect: true },
-      { id: 'b', text: "Sebebi bul basqıshta programma jazıladı", isCorrect: false },
-      { id: 'c', text: "Sebebi bul eń uzaq basqısh", isCorrect: false },
-      { id: 'd', text: "Sebebi bul eń qıyın basqısh", isCorrect: false }
+      { id: 'a', text: "I/O qurılma registrlerine yad adresleri arqalı kirisiw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana fayllardı oqıw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana tarmaqqa shıǵıw.", isCorrect: false },
+      { id: 'd', text: "Processlerdi uyqlatıw.", isCorrect: false }
     ]
   },
   {
     id: 27,
-    text: "Sistemanıń qanday tárepleri konstrukсiyalaw proсessinde esapqa alınıwı kerek?",
+    text: "CPU Keshi ne ushın qollanıladı?",
     options: [
-      { id: 'a', text: "Qáwipsizligi, ónimdarlıǵı, masshtablasıwı hám qollap-quwatlanıwı", isCorrect: true },
-      { id: 'b', text: "Qáwipsizligi, ónimdarlıǵı, minimallasıwı hám qollap-quwatlanıwı", isCorrect: false },
-      { id: 'c', text: "Qáwipsizligi, ónimdarlıǵı, opitimallasıwı hám qáwipsizligi", isCorrect: false },
-      { id: 'd', text: "Qáwipsizligi, ónimdarlıǵı, beyimlesiwi hám qáwipsizligi", isCorrect: false }
+      { id: 'a', text: "Kirisiw tezligin keskin asırıw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana qátelerdi dúzetiw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana tarmaqtaǵı trafikti basqarıw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana disk fragmentaciyasın joq etiw.", isCorrect: false }
     ]
   },
   {
     id: 28,
-    text: "Konstrukсiyalaw basqıshında jol qoyılǵan qátelerdiń ózgesheligi nede?",
+    text: "Program Counter registri ne ushın zárúr?",
     options: [
-      { id: 'a', text: "Olardı dúzetiw quramalı hám qımbatqa túsedi", isCorrect: true },
-      { id: 'b', text: "Olardı dúzetiw múmkin emes", isCorrect: false },
-      { id: 'c', text: "Olardı tek programmist dúzete aladı", isCorrect: false },
-      { id: 'd', text: "Olardı dúzetiw ańsat", isCorrect: false }
+      { id: 'a', text: "Kelesi buyrıqtıń yad adresin saqlaw.", isCorrect: true },
+      { id: 'b', text: "Fayldıń aktuallıq ólshemin saqlaw.", isCorrect: false },
+      { id: 'c', text: "Processlerdiń sanın esaplaw.", isCorrect: false },
+      { id: 'd', text: "Tarmaq paketin qayta jiberiw ushın.", isCorrect: false }
     ]
   },
   {
     id: 29,
-    text: "Programmalıq támiynattı konstrukсiyalawdan tiykarǵı maqset qanday ónimdi jaratıw?",
+    text: "Adreslew rejimleri Processorǵa qanday múmkinshilik beredi?",
     options: [
-      { id: 'a', text: "Sapalı, nátiyjeli hám talaplarǵa sáykes keletuǵın ónimdi", isCorrect: true },
-      { id: 'b', text: "Sapalı, nátiyjeli hám biraq talaplarǵa sáykes kelemeytuǵın ónimdi", isCorrect: false },
-      { id: 'c', text: "Tek dizaynı jaqsı biraq funkсionallıǵı sheklengen ónimdi", isCorrect: false },
-      { id: 'd', text: "Tez arzan jaratılǵan hám talaplarǵa sáykes keletuǵın ónimdi", isCorrect: false }
+      { id: 'a', text: "Operandlar adresin túrli usıllar menen anıqlaw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana fayl sistemasın oqıw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana semaforlardı qollanıw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana tarmaq IP adresin ózgertiw.", isCorrect: false }
     ]
   },
   {
     id: 30,
-    text: "Konstrukсiyalaw proсessinde jaratılǵan ónim qanday talaplarǵa juwap beriwi kerek?",
+    text: "TLB ne ushın qollanıladı?",
     options: [
-      { id: 'a', text: "Sapa, nátiyjelilik hám texnikalıq talaplarǵa, sonday-aq ańsat sáykeslestiriw, sınaw hám ekspluataсiyalaw múmkinshiligine", isCorrect: true },
-      { id: 'b', text: "Sapa, nátiyjelilik hám tolıq emes talaplarǵa, sonday-aq ańsat sáykeslestiriw, sınaw hám ekspluataсiyalaw múmkinshiligine", isCorrect: false },
-      { id: 'c', text: "Sapa, nátiyjelilik hám anıq emes talaplarǵa, sonday-aq ańsat sáykeslestiriw, sınaw hám ekspluataсiyalaw múmkinshiligine", isCorrect: false },
-      { id: 'd', text: "Sapa, nátiyjelilik hám turaqsız talaplarǵa, sonday-aq ańsat sáykeslestiriw, sınaw hám ekspluataсiyalaw múmkinshiligine", isCorrect: false }
+      { id: 'a', text: "Adres awdarmaların tezlestiriw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana fayl atların saqlaw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana tarmaq soketlerin basqarıw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana óz-ara tosıw (Deadlock) máselelerin sheshiw.", isCorrect: false }
     ]
   },
   {
     id: 31,
-    text: "Tabıslı nátiyje alıw ushın ne talap etiledi?",
+    text: "Linux-ta jańa process jaratıw ushın tiykarǵı sistema shaqırıǵı qaysı?",
     options: [
-      { id: 'a', text: "Zamanagóy metodologiya hám instrumentlerden paydalanatuǵın birgelikte islewshi komanda", isCorrect: true },
-      { id: 'b', text: "Tek zamanagóy metodologiyalar", isCorrect: false },
-      { id: 'c', text: "Tek instrumentler", isCorrect: false },
-      { id: 'd', text: "Tek birgelikte islewshi komanda", isCorrect: false }
+      { id: 'a', text: "fork()", isCorrect: true },
+      { id: 'b', text: "exec()", isCorrect: false },
+      { id: 'c', text: "wait()", isCorrect: false },
+      { id: 'd', text: "exit()", isCorrect: false }
     ]
   },
   {
     id: 32,
-    text: "IBM firması qashan programmalıq támiyinlew industriyasına tiykar saldı?",
+    text: "Processke basqa programmanı orınlawǵa ózgertiw ushın qaysı sistema shaqırıǵı qollanıladı?",
     options: [
-      { id: 'a', text: "1969-jılı", isCorrect: true },
-      { id: 'b', text: "1968-jılı", isCorrect: false },
-      { id: 'c', text: "1979-jılı", isCorrect: false },
-      { id: 'd', text: "1959-jılı", isCorrect: false }
+      { id: 'a', text: "exec()", isCorrect: true },
+      { id: 'b', text: "fork()", isCorrect: false },
+      { id: 'c', text: "signal()", isCorrect: false },
+      { id: 'd', text: "kill()", isCorrect: false }
     ]
   },
   {
     id: 33,
-    text: "“Programmalıq ónimniń isenimliligi” degen ne?",
+    text: "Ana Processtiń balası Processi atqarıwın tamamlawsın dep kútiwi ushın qaysı sistema shaqırıǵı qollanıladı?",
     options: [
-      { id: 'a', text: "Kiriw maǵlıwmatlarındaǵı qátelerge hám EHMniń ishki buzılıwlarına joqarı turaqlılıq", isCorrect: true },
-      { id: 'b', text: "Tek kiriw maǵlıwmatlarındaǵı qátelerge turaqlılıq", isCorrect: false },
-      { id: 'c', text: "Tek EHMniń ishki buzılıwlarına turaqlılıq", isCorrect: false },
-      { id: 'd', text: "Tek programmanıń tez islewi", isCorrect: false }
+      { id: 'a', text: "wait()", isCorrect: true },
+      { id: 'b', text: "sleep()", isCorrect: false },
+      { id: 'c', text: "pause()", isCorrect: false },
+      { id: 'd', text: "alarm()", isCorrect: false }
     ]
   },
   {
     id: 34,
-    text: "Programmalıq támiynattı konstrukсiyalaw qaysı tarawlar menen kúshli baylanısqan?",
+    text: "Processler Arasındaǵı Óz-ara Tásir (IPC) ushın eń ápiwayı hám bir tárepleme mexanizm qaysı?",
     options: [
-      { id: 'a', text: "Proektlestiriw hám testlew menen", isCorrect: true },
-      { id: 'b', text: "Proektlestiriw hám basqarıw menen", isCorrect: false },
-      { id: 'c', text: "Proektlestiriw hám dúzetiw menen", isCorrect: false },
-      { id: 'd', text: "Proektlestiriw hám marketing menen", isCorrect: false }
+      { id: 'a', text: "Pipe (Truba)", isCorrect: true },
+      { id: 'b', text: "Shared Memory", isCorrect: false },
+      { id: 'c', text: "Message Queue", isCorrect: false },
+      { id: 'd', text: "Socket", isCorrect: false }
     ]
   },
   {
     id: 35,
-    text: "Bóliw proсessi nege qarap hár qıylı kóriniske iye bolıwı múmkin?",
+    text: "Processke waqıya haqqında xabar beriw ushın qollanılatuǵın mexanizm qaysı?",
     options: [
-      { id: 'a', text: "Ómir cikliniń tańlanǵan modeli hám qollanılatuǵın metodologiyalarǵa qarap", isCorrect: true },
-      { id: 'b', text: "Qollanılatuǵın metodologiyalarǵa qarap hám programmistlerdiń tájiriybesine qarap", isCorrect: false },
-      { id: 'c', text: "Tek ómir cikliniń tańlanǵan modeline qarap", isCorrect: false },
-      { id: 'd', text: "Tek programmistlerdiń tájiriybesine qarap", isCorrect: false }
+      { id: 'a', text: "Signal", isCorrect: true },
+      { id: 'b', text: "Mutex", isCorrect: false },
+      { id: 'c', text: "Semaphore", isCorrect: false },
+      { id: 'd', text: "TLB", isCorrect: false }
     ]
   },
   {
     id: 36,
-    text: "Programmalıq támiynattı konstrukсiyalawdıń fundamentallıq tiykarları neshe bólimnen turadı?",
+    text: "Process óz yad maydanındaǵı maǵlıwmatlarǵa qáwipsiz túrde kirisiwdi qalay qadaǵalaydı?",
     options: [
-      { id: 'a', text: "4", isCorrect: true },
-      { id: 'b', text: "3", isCorrect: false },
-      { id: 'c', text: "5", isCorrect: false },
-      { id: 'd', text: "6", isCorrect: false }
+      { id: 'a', text: "Sistema shaqırıqları arqalı.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana tarmaq adresin ózgertiw.", isCorrect: false },
+      { id: 'c', text: "Fayl sistemasınıń atın ózgertiw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana CPU-nıń tezligin tómenletiw.", isCorrect: false }
     ]
   },
   {
     id: 37,
-    text: "Standartlardıń toparları qanday?",
+    text: "Linux-taǵı kill buyrıǵı tiykarınan ne isleytuǵın?",
     options: [
-      { id: 'a', text: "Sırtqı hám ishki", isCorrect: true },
-      { id: 'b', text: "Joqarı hám tómen", isCorrect: false },
-      { id: 'c', text: "Úlken hám kishi", isCorrect: false },
-      { id: 'd', text: "Ashıq hám jabıq", isCorrect: false }
+      { id: 'a', text: "Process ID-ge Signal jiberiw.", isCorrect: true },
+      { id: 'b', text: "Kompyuterdi óshiriw.", isCorrect: false },
+      { id: 'c', text: "Fayl sistemasın óshiriw.", isCorrect: false },
+      { id: 'd', text: "Tarmaq baylanısın toqtatıw.", isCorrect: false }
     ]
   },
   {
     id: 38,
-    text: "Standartlardı toparlarǵa bóliw qanday túrde ámelge asırıladı?",
+    text: "Process yad maydanınıń bir bólimin basqa processler menen bólistiriw ushın qollanılatuǵın eń tez IPC mexanizmi qaysı?",
     options: [
-      { id: 'a', text: "Shártli túrde", isCorrect: true },
-      { id: 'b', text: "Qatań túrde", isCorrect: false },
-      { id: 'c', text: "Anıq túrde", isCorrect: false },
-      { id: 'd', text: "Májbúriy túrde", isCorrect: false }
+      { id: 'a', text: "Shared Memory", isCorrect: true },
+      { id: 'b', text: "Pipe", isCorrect: false },
+      { id: 'c', text: "Message Queue", isCorrect: false },
+      { id: 'd', text: "Signal", isCorrect: false }
     ]
   },
   {
     id: 39,
-    text: "Programmalıq támiynattı konstrukсiyalawdiń neshe strategiyası bar?",
+    text: "Kernel Space hám User Space arasındaǵı óz-ara tásir tiykarınan ne arqalı ámelge asırıladı?",
     options: [
-      { id: 'a', text: "3", isCorrect: true },
-      { id: 'b', text: "2", isCorrect: false },
-      { id: 'c', text: "4", isCorrect: false },
-      { id: 'd', text: "5", isCorrect: false }
+      { id: 'a', text: "Sistema shaqırıqları", isCorrect: true },
+      { id: 'b', text: "Tek ǵana fayl oqıw", isCorrect: false },
+      { id: 'c', text: "Tek ǵana IP adresin ózgertiw", isCorrect: false },
+      { id: 'd', text: "Process ID nomerlew", isCorrect: false }
     ]
   },
   {
     id: 40,
-    text: "Inkrementli strategiyada:",
+    text: "Process óz orınlanıwın waqıtsha toqtatıw ushın qaysı sistema shaqırıǵın qollana aladı (belgili bir múddetke)?",
     options: [
-      { id: 'a', text: "Barlıq talaplar proсesstiń basında anıqlanadı", isCorrect: true },
-      { id: 'b', text: "Barlıq talaplar proсess dawamında anıqlanadı", isCorrect: false },
-      { id: 'c', text: "Barlıq talaplar proсesstiń basında anıqlanbaydı", isCorrect: false },
-      { id: 'd', text: "Talaplar tek sońǵı versiyada anıqlanadı", isCorrect: false }
+      { id: 'a', text: "sleep()", isCorrect: true },
+      { id: 'b', text: "fork()", isCorrect: false },
+      { id: 'c', text: "exec()", isCorrect: false },
+      { id: 'd', text: "wait()", isCorrect: false }
     ]
   },
   {
     id: 41,
-    text: "Qaysı strategiyada sistema versiyalar izbe-izligi túrinde qurıladı?",
+    text: "Kóp potoklı programmalastırıwda eń kóp qollanılatuǵın sinxronizaciyalaw primitivi qaysı?",
     options: [
-      { id: 'a', text: "Inkrementli hám evolyuсiyalıq strategiyalar", isCorrect: true },
-      { id: 'b', text: "Sarqırama hám evolyuсiyalıq strategiyalar", isCorrect: false },
-      { id: 'c', text: "Inkrementli hám iterativli strategiyalar", isCorrect: false },
-      { id: 'd', text: "Bir mártelik ótiw strategiyası", isCorrect: false }
+      { id: 'a', text: "Mutex", isCorrect: true },
+      { id: 'b', text: "DMA", isCorrect: false },
+      { id: 'c', text: "TLB", isCorrect: false },
+      { id: 'd', text: "Program Counter", isCorrect: false }
     ]
   },
   {
     id: 42,
-    text: "Klassikalıq ómir ciklde islep shıǵıw qalay qaraladı?",
+    text: "Critical Section (Kritikalıq Bólim) neni ańlatadı?",
     options: [
-      { id: 'a', text: "Basqıshlardıń izbe-izligi sıpatında", isCorrect: true },
-      { id: 'b', text: "Parallel basqıshlar sıpatında", isCorrect: false },
-      { id: 'c', text: "Bir basqısh sıpatında", isCorrect: false },
-      { id: 'd', text: "Tártipsiz basqıshlar sıpatında", isCorrect: false }
+      { id: 'a', text: "Ortaq resursqa kirisiwshi kod bólimi.", isCorrect: true },
+      { id: 'b', text: "Programmanıń tek basındaǵı bólimi.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana fayl operaciyaların qamtıytuǵın bólim.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana tarmaq konfiguraciyasın ózgertiwshi bólim.", isCorrect: false }
     ]
   },
   {
     id: 43,
-    text: "Klassikalıq ómir cikldiń tiykarǵı basqıshlarına tómendegilerdiń qaysısı kirmeydi?",
+    text: "Semaphore neni basqarıw ushın qollanılatuǵın qural?",
     options: [
-      { id: 'a', text: "Optimallastırıw", isCorrect: true },
-      { id: 'b', text: "Proektlestiriw", isCorrect: false },
-      { id: 'c', text: "Kodlaw", isCorrect: false },
-      { id: 'd', text: "Analizlew", isCorrect: false }
+      { id: 'a', text: "Sheklengen sanlı resurslarǵa kirisiwdi basqarıw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana yad adreslerin ózgertiw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana fayl atların sanaw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana tarmaq paketlerin sıǵıw.", isCorrect: false }
     ]
   },
   {
     id: 44,
-    text: "Klassikalıq ómir cikliniń artıqmashlıǵı nede?",
+    text: "Deadlock shárayatın sheshiwdiń eń nátiyjeli usılı qaysı?",
     options: [
-      { id: 'a', text: "Proekttiń barlıq basqıshları boyınsha joba hám waqıt grafigin beriwi", isCorrect: true },
-      { id: 'b', text: "Proekttiń barlıq basqıshları boyınsha qátelerdi tez tabıw", isCorrect: false },
-      { id: 'c', text: "Proekttiń barlıq basqıshları boyınsha qátelerdi tabıw hám tez nátiyje alıw", isCorrect: false },
-      { id: 'd', text: "Proekttiń barlıq basqıshların basqarıwda buyırtpashınıń barlıq talapların esapqa alıw", isCorrect: false }
+      { id: 'a', text: "Aldın alıw (Prevention).", isCorrect: true },
+      { id: 'b', text: "Tek ǵana Process ID-di ózgertiw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana fayl huqıqların ózgertiw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana TCP protokolın qollanıw.", isCorrect: false }
     ]
   },
   {
     id: 45,
-    text: "Klassikalıq ómir ciklinde proekt nátiyjeleri buyırtpashıǵa qashan beriliwi mumkin?",
+    text: "Banker's Algorithm tiykarınan qanday wazıypa ushın qollanıladı?",
     options: [
-      { id: 'a', text: "Jumıstıń aqırında", isCorrect: true },
-      { id: 'b', text: "Proekttiń ortasında", isCorrect: false },
-      { id: 'c', text: "Hár basqıshtan keyin", isCorrect: false },
-      { id: 'd', text: "Hár kúni", isCorrect: false }
+      { id: 'a', text: "Resurslardı qáwipsiz bólisiw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana tarmaq maǵlıwmatların shifrlaw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana fayl sistemasın formatlaw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana virtual yad ólshemin esaplaw.", isCorrect: false }
     ]
   },
   {
     id: 46,
-    text: "RAD modeliniń qansha kemshiligi hám sheklewi keltirilgen?",
+    text: "Processlerdiń Processordan nátiyjeli paydalanıwın támiyinleytuǵın bólim qaysı?",
     options: [
-      { id: 'a', text: "3", isCorrect: true },
-      { id: 'b', text: "2", isCorrect: false },
-      { id: 'c', text: "4", isCorrect: false },
-      { id: 'd', text: "5", isCorrect: false }
+      { id: 'a', text: "Process Rejeleshtiriwshisi", isCorrect: true },
+      { id: 'b', text: "Fayl Basqarıwshısı", isCorrect: false },
+      { id: 'c', text: "Tarmaq Drayveri", isCorrect: false },
+      { id: 'd', text: "Yad Allokatorı", isCorrect: false }
     ]
   },
   {
     id: 47,
-    text: "RAD qısqartpası neni ańlatadı?",
+    text: "Potok (Thread) Process-ten tiykarǵı ayırmashılıǵı nede?",
     options: [
-      { id: 'a', text: "Rapid Application Development", isCorrect: true },
-      { id: 'b', text: "Rapid Application Design", isCorrect: false },
-      { id: 'c', text: "Rapid Application Deployment", isCorrect: false },
-      { id: 'd', text: "Rapid Application Debugging", isCorrect: false }
+      { id: 'a', text: "Yad maydanın bólisiw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana tarmaq qollanbaları qollanadı.", isCorrect: false },
+      { id: 'c', text: "Processler tezirek jaratıladı.", isCorrect: false },
+      { id: 'd', text: "Potoklar tek ǵana kompressorlar qollanadı.", isCorrect: false }
     ]
   },
   {
     id: 48,
-    text: "Spiral modeliniń avtorı kim hám ol qashan usınılǵan?",
+    text: "Potoklardıń CPU-dan paydalanıw tártibin basqarıw ushın qollanılatuǵın algoritm qaysı?",
     options: [
-      { id: 'a', text: "Barri Boem, 1988", isCorrect: true },
-      { id: 'b', text: "Frederik Bruks, 1988", isCorrect: false },
-      { id: 'c', text: "Barri Boem, 1978", isCorrect: false },
-      { id: 'd', text: "Frederik Bruks, 1978", isCorrect: false }
+      { id: 'a', text: "Rejeleshtiriw algoritmi", isCorrect: true },
+      { id: 'b', text: "Dinamikalıq yadtı bólisiw algoritmi", isCorrect: false },
+      { id: 'c', text: "Fayl atın sanaw algoritmi", isCorrect: false },
+      { id: 'd', text: "Tarmaq IP adresin beriw algoritmi", isCorrect: false }
     ]
   },
   {
     id: 49,
-    text: "Programmalıq támiynattı konstrukсiyalaw proсessi nege oraylıq buwın dep esaplanadı?",
+    text: "Busy Waiting neni bildiredi?",
     options: [
-      { id: 'a', text: "Sebebi bul basqıshta joybarlaw hám tallaw basqıshına qoyılǵan ideya hám sheshimler programmalıq támiynattıń funkсional bólimlerine aylanadı", isCorrect: true },
-      { id: 'b', text: "Sebebi bul basqıshta programma jazıladı", isCorrect: false },
-      { id: 'c', text: "Sebebi bul eń uzaq basqısh", isCorrect: false },
-      { id: 'd', text: "Sebebi bul eń qıyın basqısh", isCorrect: false }
+      { id: 'a', text: "CPU waqıtın biykarǵa jumsaw.", isCorrect: true },
+      { id: 'b', text: "Potoktıń ulıwma islemewi.", isCorrect: false },
+      { id: 'c', text: "Fayl operaciyasınıń tamamlanıwın kutpey, birge islew.", isCorrect: false },
+      { id: 'd', text: "Tarmaq arqalı úziliksiz maǵlıwmat almasıw.", isCorrect: false }
     ]
   },
   {
     id: 50,
-    text: "Komponentke baǵdarlanǵan model qaysı modeldiń rawajlanıwı bolıp esaplanadı?",
+    text: "Sinxronizaciyalawdı talap etpeytuǵın resurs qaysı?",
     options: [
-      { id: 'a', text: "Spiral model", isCorrect: true },
-      { id: 'b', text: "V-model", isCorrect: false },
-      { id: 'c', text: "Kaskadlı model", isCorrect: false },
-      { id: 'd', text: "Prototiplew modeli", isCorrect: false }
+      { id: 'a', text: "Potoktıń jergilikli ózgeriwshileri.", isCorrect: true },
+      { id: 'b', text: "Ortaq yad maydanı.", isCorrect: false },
+      { id: 'c', text: "Global ózgeriwshiler.", isCorrect: false },
+      { id: 'd', text: "Fayl sisteması.", isCorrect: false }
     ]
   },
   {
     id: 51,
-    text: "Komponentke baǵdarlanǵan model qanday strategiyaǵa tiykarlanǵan?",
+    text: "Spinlock ne ushın qollanıladı?",
     options: [
-      { id: 'a', text: "Evolyuсiyalıq strategiya", isCorrect: true },
-      { id: 'b', text: "Sızıqlı strategiya", isCorrect: false },
-      { id: 'c', text: "Statikalıq strategiya", isCorrect: false },
-      { id: 'd', text: "Revolyuсiyalıq strategiya", isCorrect: false }
+      { id: 'a', text: "Qısqa múddetli qulıplawlar ushın.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana uzaq múddetli bloklawlar ushın.", isCorrect: false },
+      { id: 'c', text: "Fayl sistemasın arxivlew ushın.", isCorrect: false },
+      { id: 'd', text: "Tarmaq baylanısın úziliksiz túrde saqlaw.", isCorrect: false }
     ]
   },
   {
     id: 52,
-    text: "Komponentke baǵdarlanǵan modelde qaysı kvadranttıń mazmunı anıqlastırıladı?",
+    text: "Processler arası baylanıstı (IPC) sinxronizaciyalaw ushın qaysı qural qollanıladı?",
     options: [
-      { id: 'a', text: "Konstrukсiyalaw kvadrantı", isCorrect: true },
-      { id: 'b', text: "Analiz kvadrantı", isCorrect: false },
-      { id: 'c', text: "Rejelestiriw kvadrantı", isCorrect: false },
-      { id: 'd', text: "Testlew kvadrantı", isCorrect: false }
+      { id: 'a', text: "Semaforlar hám Mutexler.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana DMA kontrollerleri.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana Program Counter.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana CPU Keshi.", isCorrect: false }
     ]
   },
   {
     id: 53,
-    text: "Komponentke baǵdarlanǵan model boyınsha, jańa islep shıǵıw nege tiykarlanıwı kerek?",
+    text: "Reentrancy (Qayta Kirisiw múmkinshiligi) neni ańlatadı?",
     options: [
-      { id: 'a', text: "Bar bolǵan programmalıq komponentlerdi qayta qollanıwǵa", isCorrect: true },
-      { id: 'b', text: "Tek ǵana sırtqı kitapxanalardı qollanıwǵa", isCorrect: false },
-      { id: 'c', text: "Tolıǵı menen jańa kod jazıwǵa", isCorrect: false },
-      { id: 'd', text: "Tek ǵana avtomatlastırılǵan qurallardı qollanıwǵa", isCorrect: false }
+      { id: 'a', text: "Bir neshe potok tárepinen qáwipsiz shaqırıw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana yad allokaciyasında.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana fayl sistemasında.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana tarmaq IP adreslerinde.", isCorrect: false }
     ]
   },
   {
     id: 54,
-    text: "Komponentke baǵdarlanǵan modeldiń tiykarǵı maqseti ne?",
+    text: "Process Jobası (Process Scheduling) tiykarǵı maqseti nede?",
     options: [
-      { id: 'a', text: "Bar bolǵan komponentlerdi qayta qollanıw arqalı nátiyjelilikti arttırıw", isCorrect: true },
-      { id: 'b', text: "Hár bir komponentti jańadan jazıw", isCorrect: false },
-      { id: 'c', text: "Bar bolǵan komponentlerdi qayta qollanıw arqalı programma sapasın arttırıw", isCorrect: false },
-      { id: 'd', text: "Bar bolǵan komponentlerdi qayta qollanıw arqalı programmanı quramalastırıw", isCorrect: false }
+      { id: 'a', text: "Processlardan nátiyjeli paydalanıw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana faylǵa kirisiwdi qadaǵalaw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana dinamikalıq yadtı bólisiw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana tarmaq paketlerin shifrlaw.", isCorrect: false }
     ]
   },
   {
     id: 55,
-    text: "Programmalıq támiynattıń moduli degen ne?",
+    text: "Round Robin jobasın dúziw algoritmi qanday isleydi?",
     options: [
-      { id: 'a', text: "Programmalıq teksttiń fragmenti", isCorrect: true },
-      { id: 'b', text: "Programmanıń tolıq kodı", isCorrect: false },
-      { id: 'c', text: "Tek interfeys bólimi", isCorrect: false },
-      { id: 'd', text: "Tek ámelge asırıw bólimi", isCorrect: false }
+      { id: 'a', text: "Teń waqıt bólimleri berip, aylanba tártipte islew.", isCorrect: true },
+      { id: 'b', text: "Eń qısqa process birinshi orınlanadı.", isCorrect: false },
+      { id: 'c', text: "Eń uzaq process birinshi orınlanadı.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana tek tarmaq processlerin iske túsiredi.", isCorrect: false }
     ]
   },
   {
     id: 56,
-    text: "Programmalıq támiynattıń moduli sistemanıń qanday strukturası ushın qurılıs blogı esaplanadı?",
+    text: "C tilinde free() funksiyası ne isleytuǵın?",
     options: [
-      { id: 'a', text: "Logikalıq strukturası", isCorrect: true },
-      { id: 'b', text: "Fizikalıq strukturası", isCorrect: false },
-      { id: 'c', text: "Virtual strukturası", isCorrect: false },
-      { id: 'd', text: "Abstrakt strukturası", isCorrect: false }
+      { id: 'a', text: "Bólisken yadtı qaytarıp beriw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana fayldı óshiriw.", isCorrect: false },
+      { id: 'c', text: "Processlerdi toqtatıw.", isCorrect: false },
+      { id: 'd', text: "Tarmaq baylanısın óshiriw.", isCorrect: false }
     ]
   },
   {
     id: 57,
-    text: "Programmalıq támiynattıń moduli ádette qanday bólimlerden turadı?",
+    text: "Virtual Yad mexanizminiń tiykarǵı bólegi qaysı?",
     options: [
-      { id: 'a', text: "Interfeys hám ámelge asırıw bólimlerinen", isCorrect: true },
-      { id: 'b', text: "Tolıq informaсiyalıq bazadan hám ámelge asırıw bóliminen", isCorrect: false },
-      { id: 'c', text: "Interfeys hám testlew bólimien", isCorrect: false },
-      { id: 'd', text: "Testlew hám dokumentaсiya bólimlerinen", isCorrect: false }
+      { id: 'a', text: "Virtual adreslerdi Fizikalıq adreslerge awdarıw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana CPU-nıń tezligin arttırıw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana fayl atlarını sanaw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana tarmaq maǵlıwmatlarını saqlaw.", isCorrect: false }
     ]
   },
   {
     id: 58,
-    text: "Modullik degen ne?",
+    text: "Virtual yadtı Fizikalıq yadqa awdarıwda qollanılatuǵın mexanizm qaysı?",
     options: [
-      { id: 'a', text: "Sistemanıń bir-birine az ǵárezli modullerge dekompoziсiyaǵa ushırawı", isCorrect: true },
-      { id: 'b', text: "Sistemanıń bir-birine kúshli ǵárezli modullerge bóliniwi", isCorrect: false },
-      { id: 'c', text: "Sistemanıń tek bir modulden turatuǵın qásiyeti", isCorrect: false },
-      { id: 'd', text: "Sistemanıń modulsiz qurılıw qásiyeti", isCorrect: false }
+      { id: 'a', text: "Paging hám Page Table", isCorrect: true },
+      { id: 'b', text: "Tek ǵana DMA", isCorrect: false },
+      { id: 'c', text: "Tek ǵana Mutex", isCorrect: false },
+      { id: 'd', text: "Tek ǵana Inode", isCorrect: false }
     ]
   },
   {
     id: 59,
-    text: "G.Mayerstiń anıqlaması boyınsha, modullik qanday múmkinshilikti támiyinleydi?",
+    text: "Page Fault shárayatı neni bildiredi?",
     options: [
-      { id: 'a', text: "Quramali programmanı jaratıwdıń intellektual múmkinshiligin", isCorrect: true },
-      { id: 'b', text: "Programmanı avtomatlastırıw múmkinshiligin", isCorrect: false },
-      { id: 'c', text: "Programmanı tez jazıw múmkinshiligin", isCorrect: false },
-      { id: 'd', text: "Programmanı testlew múmkinshiligin", isCorrect: false }
+      { id: 'a', text: "Virtual bettiń diskte jaylasıwı yaki yadta joqlıǵı.", isCorrect: true },
+      { id: 'b', text: "Process óz yad maydanına kirisiwge urınıw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana fayl jazıw qátesi.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana tarmaq adresiniń qátesi.", isCorrect: false }
     ]
   },
   {
     id: 60,
-    text: "Moduldiń baylanıslılıǵı degen ne?",
+    text: "Yad Allokatorı tiykarǵı wazıypası nede?",
     options: [
-      { id: 'a', text: "Moduldiń bólimleriniń ǵárezlilik ólshemi", isCorrect: true },
-      { id: 'b', text: "Moduldiń sırtqı baylanısları", isCorrect: false },
-      { id: 'c', text: "Moduldiń ólshemi", isCorrect: false },
-      { id: 'd', text: "Moduldiń funkсiyaları", isCorrect: false }
+      { id: 'a', text: "Dinamikalıq yad sorawların basqarıw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana processlerdi basqarıw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana Kirgiziw/Shıǵarıw operaciyaların orınlaw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana tarmaq paketlerin jıynaw.", isCorrect: false }
     ]
   },
   {
     id: 61,
-    text: "Baylanıslılıq moduldiń qanday sıpatlaması bolıp tabıladı?",
+    text: "Dinamikalıq yadtı bólisiw nátiyjesinde payda bolǵan kishi bos bloklar qalay ataladı?",
     options: [
-      { id: 'a', text: "Ishki", isCorrect: true },
-      { id: 'b', text: "Sırtqı", isCorrect: false },
-      { id: 'c', text: "Fizikalıq", isCorrect: false },
-      { id: 'd', text: "Logikalıq", isCorrect: false }
+      { id: 'a', text: "Fragmentaciya", isCorrect: true },
+      { id: 'b', text: "Paging", isCorrect: false },
+      { id: 'c', text: "Swapping", isCorrect: false },
+      { id: 'd', text: "Caching", isCorrect: false }
     ]
   },
   {
     id: 62,
-    text: "Moduldiń baylanıslılıǵı joqarı bolǵanda ne boladı?",
+    text: "Processlerdiń bir-biriniń yad maydanına qáwipsiz kirisiwine jol qoymaw ushın qollanılatuǵın mexanizm qaysı?",
     options: [
-      { id: 'a', text: "Proektlestiriw nátiyjesi jaqsıraq boladı", isCorrect: true },
-      { id: 'b', text: "Proektlestiriw nátiyjesi jamanlasadı", isCorrect: false },
-      { id: 'c', text: "Proektlestiriw nátiyjesine tásir etpeydi", isCorrect: false },
-      { id: 'd', text: "Proektlestiriw proсessi qıyınlasadı", isCorrect: false }
+      { id: 'a', text: "Yad Qorǵawı (Memory Protection)", isCorrect: true },
+      { id: 'b', text: "DMA", isCorrect: false },
+      { id: 'c', text: "Soketler", isCorrect: false },
+      { id: 'd', text: "Fayl huqıqları", isCorrect: false }
     ]
   },
   {
     id: 63,
-    text: "Baylanıslılıqtıń joqarı bolıwı neniń kórsetkishi?",
+    text: "Yadqa kirisiwdi tezlestiriw ushın qollanılatuǵın apparatlıq kesh qaysı?",
     options: [
-      { id: 'a', text: "Moduldiń bólimleri arasındaǵı kúshli ǵárezliliktiń", isCorrect: true },
-      { id: 'b', text: "Moduldiń kóp funkсiyalarǵa iye ekenliginiń", isCorrect: false },
-      { id: 'c', text: "Moduldiń úlken ólshemde ekenliginiń", isCorrect: false },
-      { id: 'd', text: "Moduldiń basqa moduller menen kúshli baylanısınıń", isCorrect: false }
+      { id: 'a', text: "TLB (Translation Lookaside Buffer)", isCorrect: true },
+      { id: 'b', text: "CPU L1 Kesh", isCorrect: false },
+      { id: 'c', text: "Disk Buferi", isCorrect: false },
+      { id: 'd', text: "Process Kestesi", isCorrect: false }
     ]
   },
   {
     id: 64,
-    text: "Informaсiyalıq jabıqlıq neni ańlatadı?",
+    text: "Swapping (Almastırıw) neni ańlatadı?",
     options: [
-      { id: 'a', text: "Modullerdiń tek zárúr informaсiya menen almasıwın", isCorrect: true },
-      { id: 'b', text: "Modullerdiń barlıq informaсiyanı almasıwın", isCorrect: false },
-      { id: 'c', text: "Modullerdiń hesh qanday informaсiya almaspawın", isCorrect: false },
-      { id: 'd', text: "Modullerdiń tek sırtqı informaсiya menen almasıwın", isCorrect: false }
+      { id: 'a', text: "Processlerdiń yadın disk hám RAM arasında almasıw.", isCorrect: true },
+      { id: 'b', text: "Yad bólimlerin birlestiriw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana fayllardı arxivlew.", isCorrect: false },
+      { id: 'd', text: "Virtual yad adreslerin ózgertiw.", isCorrect: false }
     ]
   },
   {
     id: 65,
-    text: "Informaсiyalıq jabıqlıqta moduldiń qaysı bólimlerine kiriw sheklengen?",
+    text: "Yad blogın bólisiw ushın qollanılatuǵın First-Fit algoritmi qaysı?",
     options: [
-      { id: 'a', text: "Operaсiyalar hám maǵlıwmatlar strukturasına", isCorrect: true },
-      { id: 'b', text: "Sırtqı interfeysine hám maǵlıwmatlar strukturasına", isCorrect: false },
-      { id: 'c', text: "Tek operaсiyalarına", isCorrect: false },
-      { id: 'd', text: "Tek sırtqı interfeysine", isCorrect: false }
+      { id: 'a', text: "Birinshi sáykes keletuǵın bos bólimdi tabıw.", isCorrect: true },
+      { id: 'b', text: "Eń jaqsı sáykes keletuǵın bólimdi tabıw.", isCorrect: false },
+      { id: 'c', text: "Eń jaman sáykes keletuǵın bólimdi tabıw.", isCorrect: false },
+      { id: 'd', text: "Háreketli sáykes keletuǵın bólimdi tabıw.", isCorrect: false }
     ]
   },
   {
     id: 66,
-    text: "Informaсiyalıq jabıqlıqtıń qaysı artıqmashılıǵı kórsetilgen?",
+    text: "Stack hám Heap yad maydanları arasındaǵı tiykarǵı ayırmashılıq nede?",
     options: [
-      { id: 'a', text: "Hár qıylı ǵárezsiz jámáátlar modullerdi islep shıǵıwı múmkin", isCorrect: true },
-      { id: 'b', text: "Modullerdi tek bir jámáát islep shıǵıwı múmkin", isCorrect: false },
-      { id: 'c', text: "Modullerdi tek bir adam islep shıǵıwı múmkin", isCorrect: false },
-      { id: 'd', text: "Modullerdi bir adam islep shıǵıw múmkin emes", isCorrect: false }
+      { id: 'a', text: "Stack avtomatikalıq basqarıladı, al Heap qol menen basqarıladı.", isCorrect: true },
+      { id: 'b', text: "Stack úlkenlew, al Heap kishilew.", isCorrect: false },
+      { id: 'c', text: "Stack tez, al Heap áste.", isCorrect: false },
+      { id: 'd', text: "Stack tek ǵana processor ushın qollanıladı.", isCorrect: false }
     ]
   },
   {
     id: 67,
-    text: "Informaсiyalıq jabıqlıq sistemanı qalay ózgertiwge múmkinshilik beredi?",
+    text: "Thrashing shárayatı neni bildiredi?",
     options: [
-      { id: 'a', text: "Ańsat", isCorrect: true },
-      { id: 'b', text: "Qıyınshılıq penen", isCorrect: false },
-      { id: 'c', text: "Ózgertiwge múmkinshilik bermeydi", isCorrect: false },
-      { id: 'd', text: "Tek sırtqı interfeysin ózgertiwge múmkinshilik beredi", isCorrect: false }
+      { id: 'a', text: "OS tiykarǵı waqıtın disk hám RAM arasında bet almastırıwǵa jumsawı.", isCorrect: true },
+      { id: 'b', text: "Processlerdiń tez islew shárayatı.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana yad allokaciyası.", isCorrect: false },
+      { id: 'd', text: "Faylǵa kirisiwdi qadaǵalaw.", isCorrect: false }
     ]
   },
   {
     id: 68,
-    text: "Nege informaсiyalıq jabıqlıqta qátelerdiń tarqalıw itimallıǵı az?",
+    text: "Yadtiń qáwipsizlik dáslebinde Valid/Invalid biti qaysı mekemede ornalasqan?",
     options: [
-      { id: 'a', text: "Sebebi maǵlıwmatlar hám proсeduralardıń kópshiligi sistemanıń basqa bólimlerinen jasırınǵan", isCorrect: true },
-      { id: 'b', text: "Sebebi maǵlıwmatlar hám proсeduralardıń kópshiligi sistemanıń basqa bólimlerine ashıq", isCorrect: false },
-      { id: 'c', text: "Sebebi qáteler avtomatik túrde dúzetiledi", isCorrect: false },
-      { id: 'd', text: "Sebebi qáteler bolmaydı", isCorrect: false }
+      { id: 'a', text: "Page Table", isCorrect: true },
+      { id: 'b', text: "CPU registri", isCorrect: false },
+      { id: 'c', text: "Fayl deskriptorı", isCorrect: false },
+      { id: 'd', text: "Tarmaq buferi", isCorrect: false }
     ]
   },
   {
     id: 69,
-    text: "Informaсiyalıq jabıqlıq prinсipinde modulge qol jetkize almaytuǵın tárepler qalay ataladı?",
+    text: "Copy-on-Write (CoW) mexanizmi ne ushın qollanıladı?",
     options: [
-      { id: 'a', text: "Klientler", isCorrect: true },
-      { id: 'b', text: "Islep shıǵıwshılar", isCorrect: false },
-      { id: 'c', text: "Xızmetkerler", isCorrect: false },
-      { id: 'd', text: "Administratorlar", isCorrect: false }
+      { id: 'a', text: "Processler arasında yad betlerin nátiyjeli bólisiw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana fayldı oqıw.", isCorrect: false },
+      { id: 'c', text: "Mutexlerdi sinxronizaciyalaw.", isCorrect: false },
+      { id: 'd', text: "Tarmaq baylanısın optimallastırıw.", isCorrect: false }
     ]
   },
   {
     id: 70,
-    text: "Moduldiń ishindegilerge neler kiredi?",
+    text: "Process yad maydanınıń virtual adresiniń tómenki shegarasın belgileytuǵın mexanizm qaysı?",
     options: [
-      { id: 'a', text: "Proсeduralar hám maǵlıwmatlar", isCorrect: true },
-      { id: 'b', text: "Tek maǵlıwmatlar", isCorrect: false },
-      { id: 'c', text: "Funkсiyalar hám proсeduralar", isCorrect: false },
-      { id: 'd', text: "Tek sırtqı interfeysler", isCorrect: false }
+      { id: 'a', text: "Base Register", isCorrect: true },
+      { id: 'b', text: "Limit Register", isCorrect: false },
+      { id: 'c', text: "Stack Pointer", isCorrect: false },
+      { id: 'd', text: "Program Counter", isCorrect: false }
     ]
   },
   {
     id: 71,
-    text: "Moduldiń baylanıslılıǵınıń neshe túri bar?",
+    text: "Drayverler yadǵa qosılatuǵın hám islew waqtında júklenip, óshiriliwi múmkin bolǵan birlik qaysı?",
     options: [
-      { id: 'a', text: "7", isCorrect: true },
-      { id: 'b', text: "6", isCorrect: false },
-      { id: 'c', text: "8", isCorrect: false },
-      { id: 'd', text: "5", isCorrect: false }
+      { id: 'a', text: "Kernel Module", isCorrect: true },
+      { id: 'b', text: "Fayl sistemasınıń ózi", isCorrect: false },
+      { id: 'c', text: "Process ID", isCorrect: false },
+      { id: 'd', text: "Tarmaq IP adresleri", isCorrect: false }
     ]
   },
   {
     id: 72,
-    text: "Tómendegilerdiń qaysısı moduldiń baylanıslılıq túrlerine kirmeydi?",
+    text: "Linux drayverler arxitekturasında, drayverlerge apparatlıq támiynatqa kirisiw múmkinshiligin beretuǵın tiykarǵı bólim qaysı?",
     options: [
-      { id: 'a', text: "Strukturalıq baylanıslılıq", isCorrect: true },
-      { id: 'b', text: "Logikalıq baylanıslılıq", isCorrect: false },
-      { id: 'c', text: "Waqıttıń baylanıslıǵı", isCorrect: false },
-      { id: 'd', text: "Sáykeslik boyınsha baylanıslılıq", isCorrect: false }
+      { id: 'a', text: "Kernel Space", isCorrect: true },
+      { id: 'b', text: "User Space", isCorrect: false },
+      { id: 'c', text: "Shell", isCorrect: false },
+      { id: 'd', text: "Grafik interfeys", isCorrect: false }
     ]
   },
   {
     id: 73,
-    text: "Qaysı baylanıslılıq túri 'izbe-iz' dep te ataladı?",
+    text: "Kirgiziw-shıǵarıw drayverleriniń tiykarǵı islew principlerinen biri neni qamtıydı?",
     options: [
-      { id: 'a', text: "Informaсiyalıq baylanıslılıq", isCorrect: true },
-      { id: 'b', text: "Kommunikativlik baylanıslılıq", isCorrect: false },
-      { id: 'c', text: "Proсeduralıq baylanıslılıq", isCorrect: false },
-      { id: 'd', text: "Funkсionallıq baylanıslılıq", isCorrect: false }
+      { id: 'a', text: "Úzilislerdi basqarıw (Interrupt handling).", isCorrect: true },
+      { id: 'b', text: "Yad allokaciyası.", isCorrect: false },
+      { id: 'c', text: "Processlerdi rejeleshtiriw.", isCorrect: false },
+      { id: 'd', text: "Fayl atlarını ózgertiw.", isCorrect: false }
     ]
   },
   {
     id: 74,
-    text: "Moduldiń baylanıslılıq túrleriniń durıs tártibin kórsetiń:",
+    text: "Drayverlerde ioctl funksiyası ne ushın qollanıladı?",
     options: [
-      { id: 'a', text: "Funkсionallıq, Informaсiyalıq, Kommunikativlik, Proсeduralıq, Waqıttıń, Logikalıq, Sáykeslik boyınsha", isCorrect: true },
-      { id: 'b', text: "Sáykeslik boyınsha, Logikalıq, Waqıttıń, Proсeduralıq, Kommunikativlik, Informaсiyalıq, Funkсionallıq", isCorrect: false },
-      { id: 'c', text: "Logikalıq, Sáykeslik boyınsha, Waqıttıń, Kommunikativlik, Proсeduralıq, Informaсiyalıq, Funkсionallıq", isCorrect: false },
-      { id: 'd', text: "Funkсionallıq, Kommunikativlik, Informaсiyalıq, Proсeduralıq, Waqıttıń, Logikalıq, Sáykeslik boyınsha", isCorrect: false }
+      { id: 'a', text: "Arnawlı Kirgiziw/Shıǵarıw basqarıwları ushın.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana fayldı oqıw.", isCorrect: false },
+      { id: 'c', text: "Mutexlerdi jaratıw.", isCorrect: false },
+      { id: 'd', text: "Virtual yadtı bólistiriw.", isCorrect: false }
     ]
   },
   {
     id: 75,
-    text: "Ekstremal programmalastırıw qısqasha qalay belgilenedi?",
+    text: "Qurılma drayveri nege yad rejiminde islewdi talap etedi?",
     options: [
-      { id: 'a', text: "XP", isCorrect: true },
-      { id: 'b', text: "EP", isCorrect: false },
-      { id: 'c', text: "EX", isCorrect: false },
-      { id: 'd', text: "PX", isCorrect: false }
+      { id: 'a', text: "Apparatlıq támiynat registrlerine tuwrıdan-tuwrı kirisiw ushın.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana tez faylǵa kirisiw.", isCorrect: false },
+      { id: 'c', text: "Processlerdiń yadın bólisiw.", isCorrect: false },
+      { id: 'd', text: "Tarmaq paketlerin tez jiberiw.", isCorrect: false }
     ]
   },
   {
     id: 76,
-    text: "Ekstremal programmalastırıw qanday tarawda qollanıladı?",
+    text: "Qurılma drayveri paydalanıwshı processleri menen baylanısıw ushın neni qollana aladı?",
     options: [
-      { id: 'a', text: "Programmalıq táminattı islep shıǵıw", isCorrect: true },
-      { id: 'b', text: "Finans", isCorrect: false },
-      { id: 'c', text: "Marketing", isCorrect: false },
-      { id: 'd', text: "Logistika", isCorrect: false }
+      { id: 'a', text: "File Descriptors (Device files) arqalı.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana CPU registrlerin.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana TLB-nı.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana DMA-nı.", isCorrect: false }
     ]
   },
   {
     id: 77,
-    text: "Ekstremal programmalastırıw neshe tiykarǵı qádiriyatqa iye?",
+    text: "MMIO mexanizmi drayverde nege múmkinshilik beredi?",
     options: [
-      { id: 'a', text: "4", isCorrect: true },
-      { id: 'b', text: "3", isCorrect: false },
-      { id: 'c', text: "2", isCorrect: false },
-      { id: 'd', text: "5", isCorrect: false }
+      { id: 'a', text: "I/O qurılmalarınıń registrlerine yad adresleri arqalı kirisiw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana disk fragmentaciyasın joq etiw.", isCorrect: false },
+      { id: 'c', text: "Processlerdiń sinxronizaciyası.", isCorrect: false },
+      { id: 'd', text: "Tarmaq protokolların ózgertiw.", isCorrect: false }
     ]
   },
   {
     id: 78,
-    text: "Tómendegilerdiń qaysısı Ekstremal programmalastırıw qádiriyatlarına kirmeydi?",
+    text: "Qurılma drayverlerin sazlaw procesi qalay ataladı?",
     options: [
-      { id: 'a', text: "Innovaсiya", isCorrect: true },
-      { id: 'b', text: "Ápiwayılıq", isCorrect: false },
-      { id: 'c', text: "Keri baylanıs", isCorrect: false },
-      { id: 'd', text: "Kommunikaсiya", isCorrect: false }
+      { id: 'a', text: "Debugging", isCorrect: true },
+      { id: 'b', text: "Rejeleshtiriw", isCorrect: false },
+      { id: 'c', text: "Fragmentaciyalaw", isCorrect: false },
+      { id: 'd', text: "Almastırıw", isCorrect: false }
     ]
   },
   {
     id: 79,
-    text: "Ekstremal programmalastırıwdıń maqseti ne?",
+    text: "Drayverdiń qurılmadan maǵlıwmatlardı alıwı ushın kútiwdiń eń nátiyjeli usılı qaysı?",
     options: [
-      { id: 'a', text: "Eki táreptiń de kúsh-jigerin ulıwma maqsetlerge qaratıw", isCorrect: true },
-      { id: 'b', text: "Tek biznesmenlerdiń paydasın arttırıw", isCorrect: false },
-      { id: 'c', text: "Tek programmistlerdiń jumısın jeńillestiriw", isCorrect: false },
-      { id: 'd', text: "Tek texnologiyanı rawajlandırıw", isCorrect: false }
+      { id: 'a', text: "Úzilislerdi qollanıw (Interrupt-driven I/O).", isCorrect: true },
+      { id: 'b', text: "Úziliksiz túrde soraw jiberiw (Polling).", isCorrect: false },
+      { id: 'c', text: "Tek ǵana Mutex qollanıw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana sleep() shaqırıw.", isCorrect: false }
     ]
   },
   {
     id: 80,
-    text: "Konstrukсiyalaw tilleri neni óz ishine aladı?",
+    text: "Qaysı qurılmalar Kirgiziw/Shıǵarıw operaciyaları ushın DMA-nı qollanadı?",
     options: [
-      { id: 'a', text: "Adamnıń kompyuterde orınlanatuǵın máseleniń sheshimin beriwi ushın qollanılatuǵın barlıq baylanıs formaların", isCorrect: true },
-      { id: 'b', text: "Tek programmalastırıw tillerin", isCorrect: false },
-      { id: 'c', text: "Tek konfiguraсiyalıq tillerdi", isCorrect: false },
-      { id: 'd', text: "Tek instrumentallıq tillerdi", isCorrect: false }
+      { id: 'a', text: "Joqarı tezliktegi qurılmalar (Diskler, Tarmaq kartaları).", isCorrect: true },
+      { id: 'b', text: "Tek ǵana klaviaturalar.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana procesler.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana kishi yadlar.", isCorrect: false }
     ]
   },
   {
     id: 81,
-    text: "Konstrukсiyalaw tilleriniń eń ápiwayı túri qaysı?",
+    text: "Tarmaqtaǵı isenimli, baylanısqa baǵdarlanǵan protokol qaysı?",
     options: [
-      { id: 'a', text: "Konfiguraсiyalıq til", isCorrect: true },
-      { id: 'b', text: "Instrumentallıq tili", isCorrect: false },
-      { id: 'c', text: "Programmalastırıw tili", isCorrect: false },
-      { id: 'd', text: "Sсenariy tili", isCorrect: false }
+      { id: 'a', text: "TCP", isCorrect: true },
+      { id: 'b', text: "UDP", isCorrect: false },
+      { id: 'c', text: "ICMP", isCorrect: false },
+      { id: 'd', text: "IP", isCorrect: false }
     ]
   },
   {
     id: 82,
-    text: "Instrumentallıq tili qanday elementlerden dúziledi?",
+    text: "Socket programmalastırıwda neni bildiredi?",
     options: [
-      { id: 'a', text: "Qayta qollanılatuǵın elementlerden", isCorrect: true },
-      { id: 'b', text: "Jańa elementlerden", isCorrect: false },
-      { id: 'c', text: "Tek bir márte qollanılatuǵın elementlerden", isCorrect: false },
-      { id: 'd', text: "Tek sistemalıq elementlerden", isCorrect: false }
+      { id: 'a', text: "Tarmaqqa kirisiw ushın OS interfeysi (End-point).", isCorrect: true },
+      { id: 'b', text: "Tek ǵana fayldıń atı.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana yad bólimi.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana CPU registri.", isCorrect: false }
     ]
   },
   {
     id: 83,
-    text: "Programmalastırıw tili haqqında ne aytılǵan?",
+    text: "Serverdiń belgili bir portta baylanıslardı tıńlawı ushın qollanatuǵın tarmaq shaqırıǵı qaysı?",
     options: [
-      { id: 'a', text: "Eń iykemli túri", isCorrect: true },
-      { id: 'b', text: "Eń qáwipsiz túri", isCorrect: false },
-      { id: 'c', text: "Eń quramalı túri", isCorrect: false },
-      { id: 'd', text: "Eń iykemsiz túri", isCorrect: false }
+      { id: 'a', text: "bind() hám listen()", isCorrect: true },
+      { id: 'b', text: "connect()", isCorrect: false },
+      { id: 'c', text: "send()", isCorrect: false },
+      { id: 'd', text: "recv()", isCorrect: false }
     ]
   },
   {
     id: 84,
-    text: "Programmalastırıw tilin úyreniw hám qollanıw ushın ne kerek?",
+    text: "Klient hám Server arasındaǵı TCP baylanısın ornatıw procesi qalay ataladı?",
     options: [
-      { id: 'a', text: "Kóbirek kúsh hám tájiriybe", isCorrect: true },
-      { id: 'b', text: "Tek az ǵana tájiriybe", isCorrect: false },
-      { id: 'c', text: "Tek qısqa waqıt", isCorrect: false },
-      { id: 'd', text: "Tek arnawlı bilim", isCorrect: false }
+      { id: 'a', text: "Three-Way Handshake", isCorrect: true },
+      { id: 'b', text: "Simple Connection", isCorrect: false },
+      { id: 'c', text: "Four-Way Closing", isCorrect: false },
+      { id: 'd', text: "UDP Protocol", isCorrect: false }
     ]
   },
   {
     id: 85,
-    text: "Programmalastırıw tillerin anıqlawda qansha tiykarǵı notaсiya túri qollanıladı?",
+    text: "Non-blocking I/O neni bildiredi?",
     options: [
-      { id: 'a', text: "3", isCorrect: true },
-      { id: 'b', text: "2", isCorrect: false },
-      { id: 'c', text: "4", isCorrect: false },
-      { id: 'd', text: "5", isCorrect: false }
+      { id: 'a', text: "Kútiwsiz, operaciya bitpese de birden qaytıw.", isCorrect: true },
+      { id: 'b', text: "Processlerdiń tolıq uyqılawı.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana DMA qollanıw.", isCorrect: false },
+      { id: 'd', text: "Yad allokaciyasın toqtatıw.", isCorrect: false }
     ]
   },
   {
     id: 86,
-    text: "Tómendegilerdiń qaysısı programmalastırıw tillerin anıqlawda qollanılatuǵın notaсiya túri emes?",
+    text: "Tarmaq baylanısın qabıl etken Processke jańa soket deskriptorın qaytaratuǵın tarmaq shaqırıǵı qaysı?",
     options: [
-      { id: 'a', text: "Audiolıq", isCorrect: true },
-      { id: 'b', text: "Formal", isCorrect: false },
-      { id: 'c', text: "Vizuallıq", isCorrect: false },
-      { id: 'd', text: "Lingvistikalıq", isCorrect: false }
+      { id: 'a', text: "accept()", isCorrect: true },
+      { id: 'b', text: "listen()", isCorrect: false },
+      { id: 'c', text: "close()", isCorrect: false },
+      { id: 'd', text: "select()", isCorrect: false }
     ]
   },
   {
     id: 87,
-    text: "Programmalastırıw tillerin anıqlawda qollanılatuǵın notaсiya túrleriniń biri:",
+    text: "Port Nomeri ne ushın qollanıladı?",
     options: [
-      { id: 'a', text: "Lingvistikalıq", isCorrect: true },
-      { id: 'b', text: "Matematikalıq", isCorrect: false },
-      { id: 'c', text: "Fizikalıq", isCorrect: false },
-      { id: 'd', text: "Ximiyalıq", isCorrect: false }
+      { id: 'a', text: "Processler yaki Xızmetler arasında ajıratıw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana kompyuter atın saqlaw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana fayl ólshemin esaplaw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana virtual adreslerdi ózgertiw.", isCorrect: false }
     ]
   },
   {
     id: 88,
-    text: "Lingvistikalıq notaсiyalar neni qollanıwı menen sıpatlanadı?",
+    text: "Kóp klientler menen bir waqıtta jumıs isleytuǵın serverdi jaratıwdıń tiykarǵı usılı qaysı?",
     options: [
-      { id: 'a', text: "Arnawlı «sózlerdi» óz ishine alǵan tekst qatarların", isCorrect: true },
-      { id: 'b', text: "Matematikalıq formulalardı", isCorrect: false },
-      { id: 'c', text: "Grafikalıq sxemalardı", isCorrect: false },
-      { id: 'd', text: "Audio signallardı", isCorrect: false }
+      { id: 'a', text: "Multiplexing (select/poll) yaki kóp potoklılıq.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana bir process penen islew.", isCorrect: false },
+      { id: 'c', text: "Fayl sistemasın óshiriw.", isCorrect: false },
+      { id: 'd', text: "DMA-nı toqtatıw.", isCorrect: false }
     ]
   },
   {
     id: 89,
-    text: "Lingvistikalıq notaсiyalardıń semantikası neni támiyinleydi?",
+    text: "Byte Ordering máseleleri ne ushın áhmiyetli?",
     options: [
-      { id: 'a', text: "Programmanıń orınlanıwın intuitiv túsiniwdi", isCorrect: true },
-      { id: 'b', text: "Programmanıń tezligin", isCorrect: false },
-      { id: 'c', text: "Programmanıń kólemin", isCorrect: false },
-      { id: 'd', text: "Programmanıń qátelerin avtomatik túrde tabıwdı", isCorrect: false }
+      { id: 'a', text: "Maǵlıwmatlardı túrli arxitekturalar arasında durıs túsiniw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana fayl huqıqların ózgertiw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana processlerdi rejeleshtiriw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana yad fragmentaciyasın joq etiw.", isCorrect: false }
     ]
   },
   {
     id: 90,
-    text: "Lingvistikalıq notaсiyalar qanday maqsette qollanıladı?",
+    text: "Tarmaq maǵlıwmatlarını socket arqalı jiberiw ushın qollanılatuǵın sistema shaqırıǵı qaysı?",
     options: [
-      { id: 'a', text: "Programmalastırıw konstrukсiyaların kórsetiw ushın", isCorrect: true },
-      { id: 'b', text: "Programmanıń grafikalıq interfeysin jasaw ushın", isCorrect: false },
-      { id: 'c', text: "Programmanıń tezligin arttırıw ushın", isCorrect: false },
-      { id: 'd', text: "Programmanıń qáwipsizligin támiyinlew ushın", isCorrect: false }
+      { id: 'a', text: "send() yaki write()", isCorrect: true },
+      { id: 'b', text: "recv()", isCorrect: false },
+      { id: 'c', text: "bind()", isCorrect: false },
+      { id: 'd', text: "listen()", isCorrect: false }
     ]
   },
   {
     id: 91,
-    text: "Formal notaсiyalar neni támiyinleydi?",
+    text: "Fayl deskriptorları sanın qadaǵalaw ushın qaysı mexanizm qollanıladı?",
     options: [
-      { id: 'a', text: "Alınǵan kodtıń testlewge eń joqarı tayarlıǵın", isCorrect: true },
-      { id: 'b', text: "Kodtıń tezligin", isCorrect: false },
-      { id: 'c', text: "Kodtıń qısqalıǵın", isCorrect: false },
-      { id: 'd', text: "Kodtıń avtomatik túrde jazılıwın", isCorrect: false }
+      { id: 'a', text: "I/O Multiplexing (select, poll, epoll).", isCorrect: true },
+      { id: 'b', text: "Tek ǵana malloc()", isCorrect: false },
+      { id: 'c', text: "Tek ǵana fork()", isCorrect: false },
+      { id: 'd', text: "Tek ǵana wait()", isCorrect: false }
     ]
   },
   {
     id: 92,
-    text: "Formal konstrukсiyalar neni paydalanadı?",
+    text: "Half-Close (Yarım Jabıw) neni bildiredi?",
     options: [
-      { id: 'a', text: "Qollanılatuǵın simvolllardıń kombinaсiyaların anıqlawdıń anıq usılın", isCorrect: true },
-      { id: 'b', text: "Tábiyiy tillerdiń grammatikasın", isCorrect: false },
-      { id: 'c', text: "Intuitiv túsiniklerdi", isCorrect: false },
-      { id: 'd', text: "Programmistlerdiń subektiv pikirlerin", isCorrect: false }
+      { id: 'a', text: "Bir baǵıtta maǵlıwmat jiberiwdi toqtatıw, biraq qabıllawdı dawam ettiriw.", isCorrect: true },
+      { id: 'b', text: "Fayl sistemasınıń ózi óshiriliwi.", isCorrect: false },
+      { id: 'c', text: "Mutex-tiń biykar etiliwi.", isCorrect: false },
+      { id: 'd', text: "DMA-nıń óshiriliwi.", isCorrect: false }
     ]
   },
   {
     id: 93,
-    text: "Vizuallıq notaсiyalar qanday jantasıwlar menen eń az baylanısqan?",
+    text: "TCP/IP protokol jıynaǵınıń Internet Qabatında tiykarǵı rol oynaytuǵın protokol qaysı?",
     options: [
-      { id: 'a', text: "Tekstke baǵdarlanǵan jantasıwlar", isCorrect: true },
-      { id: 'b', text: "Matematikalıq jantasıwlar", isCorrect: false },
-      { id: 'c', text: "Formal jantasıwlar", isCorrect: false },
-      { id: 'd', text: "Lingvistikalıq jantasıwlar", isCorrect: false }
+      { id: 'a', text: "IP", isCorrect: true },
+      { id: 'b', text: "TCP", isCorrect: false },
+      { id: 'c', text: "UDP", isCorrect: false },
+      { id: 'd', text: "HTTP", isCorrect: false }
     ]
   },
   {
     id: 94,
-    text: "Vizuallıq notaсiyalar neni názerde tutadı?",
+    text: "Tarmaqta eń ápiwayı, tez, biraq isenimsiz maǵlıwmat almasıwdı támiyinleytuǵın protokol qaysı?",
     options: [
-      { id: 'a', text: "Vizuallıq konstrukсiyalardı tikkeley interpretaсiyalawdı", isCorrect: true },
-      { id: 'b', text: "Matematikalıq formulalardı qollanıwdı", isCorrect: false },
-      { id: 'c', text: "Tekstlik kodtı interpretaсiyalawdı", isCorrect: false },
-      { id: 'd', text: "Tábiyiy tildi qollanıwdı", isCorrect: false }
+      { id: 'a', text: "UDP", isCorrect: true },
+      { id: 'b', text: "TCP", isCorrect: false },
+      { id: 'c', text: "ICMP", isCorrect: false },
+      { id: 'd', text: "FTP", isCorrect: false }
     ]
   },
   {
     id: 95,
-    text: "Vizuallıq notaсiyalardaǵı logika qalay belgilenedi?",
+    text: "Loopback Interface ne ushın qollanıladı?",
     options: [
-      { id: 'a', text: "Vizuallıq obektlerdiń jaylasıwı menen", isCorrect: true },
-      { id: 'b', text: "Matematikalıq formulalar arqalı", isCorrect: false },
-      { id: 'c', text: "Tekstlik kodlar arqalı", isCorrect: false },
-      { id: 'd', text: "Tábiyiy til arqalı", isCorrect: false }
+      { id: 'a', text: "Bir kompyuter ishinde tarmaq baylanısın sınaw ushın (127.0.0.1).", isCorrect: true },
+      { id: 'b', text: "Tek ǵana sırtqı tarmaqqa shıǵıw.", isCorrect: false },
+      { id: 'c', text: "Fayl sistemasın óshiriw.", isCorrect: false },
+      { id: 'd', text: "Processlerdi uyqlatıw.", isCorrect: false }
     ]
   },
   {
     id: 96,
-    text: "Vizuallıq notaсiya qanday jaǵdaylarda kúshli qural xızmetin atqara aladı?",
+    text: "Processorlar hám yadtıń islew principlerın qaysı programmalastırıw tili jaqsı súwretleydi?",
     options: [
-      { id: 'a', text: "Programmalar ushın paydalanıwshı interfeysin qurıwda", isCorrect: true },
-      { id: 'b', text: "Tekstlik maǵlıwmatlardı óńdewde", isCorrect: false },
-      { id: 'c', text: "Matematikalıq esaplawlarda", isCorrect: false },
-      { id: 'd', text: "Málimlemeler bazasın basqarıwda", isCorrect: false }
+      { id: 'a', text: "Assembler yaki C tili.", isCorrect: true },
+      { id: 'b', text: "Python", isCorrect: false },
+      { id: 'c', text: "SQL", isCorrect: false },
+      { id: 'd', text: "HTML", isCorrect: false }
     ]
   },
   {
     id: 97,
-    text: "Scrum degenimiz ne?",
+    text: "Load Time Linking neni bildiredi?",
     options: [
-      { id: 'a', text: "Birgelikte islew proсessin shólkemlestiriw metodikası", isCorrect: true },
-      { id: 'b', text: "Programmalaw tili", isCorrect: false },
-      { id: 'c', text: "Málimlemeler bazasın basqarıw sisteması", isCorrect: false },
-      { id: 'd', text: "Kompyuter oyını", isCorrect: false }
+      { id: 'a', text: "Orınlanıwshı fayl yadqa júklengen waqıtta sırtqı funkciyalardıń adreslerin belgilew.", isCorrect: true },
+      { id: 'b', text: "Programmayıń islep atırǵan waqıtta yadtan bóleklenıw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana fayldı oqıw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana tarmaq adresin ózgertiw.", isCorrect: false }
     ]
   },
   {
     id: 98,
-    text: "Scrum metodikasınıń tiykarında ne jatadı?",
+    text: "OS Processlerdiń yad maydanın ajıratıw ushın qaysı apparatlıq támiynattan paydalanadı?",
     options: [
-      { id: 'a', text: "Kishi komanda tárepinen ónimdi basqıshpa-basqısh islep shıǵıw hám jetilistiriw", isCorrect: true },
-      { id: 'b', text: "Úlken kompaniyalardıń jumısı", isCorrect: false },
-      { id: 'c', text: "Jeke programmistlerdiń jumısı", isCorrect: false },
-      { id: 'd', text: "Tek biznes-buyırtpashılardıń jumısı", isCorrect: false }
+      { id: 'a', text: "MMU (Memory Management Unit)", isCorrect: true },
+      { id: 'b', text: "Hard Disk", isCorrect: false },
+      { id: 'c', text: "Tarmaq Kartası", isCorrect: false },
+      { id: 'd', text: "Klaviatura", isCorrect: false }
     ]
   },
   {
     id: 99,
-    text: "Scrum di kim oylap tapqan?",
+    text: "Segmentaciya neni ańlatadı?",
     options: [
-      { id: 'a', text: "Djeff Sazerlend hám Ken Shvaber", isCorrect: true },
-      { id: 'b', text: "Bill Geyts hám Stiv Djobs", isCorrect: false },
-      { id: 'c', text: "Mark Cukerberg hám Ilon Mask", isCorrect: false },
-      { id: 'd', text: "Linus Torvalds hám Richard Stollman", isCorrect: false }
+      { id: 'a', text: "Yadtı logikalıq birlikler (kod, maǵlıwmat, stack) boyınsha bólisiw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana diskte isleytuǵın.", isCorrect: false },
+      { id: 'c', text: "Tezirek isleytuǵın mexanizm.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana tarmaq ushın.", isCorrect: false }
     ]
   },
   {
     id: 100,
-    text: "Scrum qaysı metodikalar toparına kiredi?",
+    text: "Linux-ta process óz-ózin óshiriwi ushın qollanılatuǵın sistema shaqırıǵı qaysı?",
     options: [
-      { id: 'a', text: "Agile-metodikalar", isCorrect: true },
-      { id: 'b', text: "Kaskadlı metodikalar", isCorrect: false },
-      { id: 'c', text: "Formal metodikalar", isCorrect: false },
-      { id: 'd', text: "Vizuallıq metodikalar", isCorrect: false }
+      { id: 'a', text: "_exit() yaki exit()", isCorrect: true },
+      { id: 'b', text: "fork()", isCorrect: false },
+      { id: 'c', text: "exec()", isCorrect: false },
+      { id: 'd', text: "wait()", isCorrect: false }
+    ]
+  },
+  {
+    id: 101,
+    text: "IPC tiykarǵı maqseti nede?",
+    options: [
+      { id: 'a', text: "Processler arasında maǵlıwmat almasıw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana yad fragmentaciyasın joq etiw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana fayl huqıqların qadaǵalaw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana DMA-nı óshiriw.", isCorrect: false }
+    ]
+  },
+  {
+    id: 102,
+    text: "FIFO jobasın dúziw algoritminiń ózgesheligi nede?",
+    options: [
+      { id: 'a', text: "Kelgen tártipte, úzilislersiz orınlanıw.", isCorrect: true },
+      { id: 'b', text: "Eń qısqa process birinshi orınlanadı.", isCorrect: false },
+      { id: 'c', text: "Processlerge waqıt bólimleri beriledi.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana tarmaq processleri orınlanadı.", isCorrect: false }
+    ]
+  },
+  {
+    id: 103,
+    text: "Priority Scheduling neni bildiredi?",
+    options: [
+      { id: 'a', text: "Eń joqarı áhmiyetliligi bar process birinshi Processordan paydalanadı.", isCorrect: true },
+      { id: 'b', text: "Processlar teń waqıt bólimleri menen orınlanadı.", isCorrect: false },
+      { id: 'c', text: "Processlar kelgen tártipte orınlanadı.", isCorrect: false },
+      { id: 'd', text: "Processlar tek ǵana yadta isleytuǵın.", isCorrect: false }
+    ]
+  },
+  {
+    id: 104,
+    text: "Aging mexanizmi qaysı máselelerdi sheshiw ushın qollanıladı?",
+    options: [
+      { id: 'a', text: "Ash qalıwdı (Starvation) boldırmaw.", isCorrect: true },
+      { id: 'b', text: "Yad allokaciyasınıń nátiyjesizligin.", isCorrect: false },
+      { id: 'c', text: "Fayl sistemasınıń qátelerin.", isCorrect: false },
+      { id: 'd', text: "Tarmaq baylanısınıń toqtawın.", isCorrect: false }
+    ]
+  },
+  {
+    id: 105,
+    text: "Spinlock ne ushın qollanıladı?",
+    options: [
+      { id: 'a', text: "Qısqa múddetli qulıplawlar ushın.", isCorrect: true },
+      { id: 'b', text: "Ol kóp waqıt CPU-nı toqtatadı.", isCorrect: false },
+      { id: 'c', text: "Ol tek ǵana paydalanıwshı keńisliginde isleytuǵın.", isCorrect: false },
+      { id: 'd', text: "Ol yad allokaciyasın basqaradı.", isCorrect: false }
+    ]
+  },
+  {
+    id: 106,
+    text: "Futex Linux-ta ne ushın qollanıladı?",
+    options: [
+      { id: 'a', text: "Potok sinxronizaciyasın paydalanıwshı keńisliginde tez orınlaw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana tarmaq adreslerin ózgertiw.", isCorrect: false },
+      { id: 'c', text: "Fayl sistemasın formatlaw.", isCorrect: false },
+      { id: 'd', text: "Virtual yadtı óshiriw.", isCorrect: false }
+    ]
+  },
+  {
+    id: 107,
+    text: "calloc() hám malloc() arasındaǵı tiykarǵı ayırmashılıq nede?",
+    options: [
+      { id: 'a', text: "calloc() yadtı nollardıń sanı menen baslaydı.", isCorrect: true },
+      { id: 'b', text: "calloc() tek ǵana Stack-ti qollanadı.", isCorrect: false },
+      { id: 'c', text: "calloc() tezirek.", isCorrect: false },
+      { id: 'd', text: "calloc() tek ǵana tarmaq ushın.", isCorrect: false }
+    ]
+  },
+  {
+    id: 108,
+    text: "Yadqa kirisiw huqıqları ne arqalı qadaǵalanadı?",
+    options: [
+      { id: 'a', text: "MMU hám Page Table bitleri arqalı.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana fayl atı menen.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana Process ID menen.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana soket nomeri menen.", isCorrect: false }
+    ]
+  },
+  {
+    id: 109,
+    text: "Fayl Descriptorı neni bildiredi?",
+    options: [
+      { id: 'a', text: "Ashılǵan faylǵa sıltawshı kishi san.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana yad allokaciyası.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana tarmaq portı.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana DMA kanalı.", isCorrect: false }
+    ]
+  },
+  {
+    id: 110,
+    text: "Faylǵa kirisiw huqıqların ózgertiw ushın sistema shaqırıǵı qaysı?",
+    options: [
+      { id: 'a', text: "chmod()", isCorrect: true },
+      { id: 'b', text: "chown()", isCorrect: false },
+      { id: 'c', text: "open()", isCorrect: false },
+      { id: 'd', text: "read()", isCorrect: false }
+    ]
+  },
+  {
+    id: 111,
+    text: "Linux-ta Process yadın sırtqı diskke jılıstırıw mexanizmi neni bildiredi?",
+    options: [
+      { id: 'a', text: "Swapping", isCorrect: true },
+      { id: 'b', text: "Caching", isCorrect: false },
+      { id: 'c', text: "Fragmentaciya", isCorrect: false },
+      { id: 'd', text: "Linking", isCorrect: false }
+    ]
+  },
+  {
+    id: 112,
+    text: "Kernel Mode Processorǵa qanday múmkinshilik beredi?",
+    options: [
+      { id: 'a', text: "Barlıq Processor buyrıqların atqarıw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana paydalanıwshı programmasın atqarıw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana fayldı oqıw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana tarmaq portlarını ashıw.", isCorrect: false }
+    ]
+  },
+  {
+    id: 113,
+    text: "User Mode Processorǵa qanday sheklewler qoyadı?",
+    options: [
+      { id: 'a', text: "OS tiykarǵı yadına kirisiwge sheklew.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana tez faylǵa kirisiw.", isCorrect: false },
+      { id: 'c', text: "Processlerdiń sinxronizaciyası.", isCorrect: false },
+      { id: 'd', text: "Tarmaq baylanısın optimallastırıw.", isCorrect: false }
+    ]
+  },
+  {
+    id: 114,
+    text: "Trap mexanizmi ne ushın qollanıladı?",
+    options: [
+      { id: 'a', text: "Programmalastırıw arqalı Kernel funksiyasına shaqırıw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana yad allokaciyası.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana DMA-nı toqtatıw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana Mutex qollanıw.", isCorrect: false }
+    ]
+  },
+  {
+    id: 115,
+    text: "Virtual Bet ólsheminiń úlken bolıwınıń artıqmashılıǵı nede?",
+    options: [
+      { id: 'a', text: "Page Table ólsheminiń kishireyiwi.", isCorrect: true },
+      { id: 'b', text: "Processlerdiń tez islew múmkinshiligi.", isCorrect: false },
+      { id: 'c', text: "Fayl atınıń uzın bolıwı.", isCorrect: false },
+      { id: 'd', text: "Tarmaq adresiniń kishi bolıwı.", isCorrect: false }
+    ]
+  },
+  {
+    id: 116,
+    text: "Locality of Reference neni bildiredi?",
+    options: [
+      { id: 'a', text: "Kishi yad bólimine kirisiw tendenciyası.", isCorrect: true },
+      { id: 'b', text: "Processler tek ǵana diskte isleytuǵın.", isCorrect: false },
+      { id: 'c', text: "Fayllar tek ǵana bir direktoriyada jaylasqan.", isCorrect: false },
+      { id: 'd', text: "Tarmaq tek ǵana bir IP adreske baylanıslı.", isCorrect: false }
+    ]
+  },
+  {
+    id: 117,
+    text: "OS Processlerdi jaratıw hám óshiriw ushın qollanılatuǵın yad maydanı qaysı?",
+    options: [
+      { id: 'a', text: "Kernel Yadı", isCorrect: true },
+      { id: 'b', text: "Stack", isCorrect: false },
+      { id: 'c', text: "Heap", isCorrect: false },
+      { id: 'd', text: "Tarmaq Buferi", isCorrect: false }
+    ]
+  },
+  {
+    id: 118,
+    text: "Pointer arifmetikası sistemalı programmalastırıwda ne ushın zárúr?",
+    options: [
+      { id: 'a', text: "Yad adresleri menen tikkeley islew.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana fayl atın jazıw.", isCorrect: false },
+      { id: 'c', text: "Mutexlerdi jaratıw.", isCorrect: false },
+      { id: 'd', text: "Tarmaq paketlerin shifrlaw.", isCorrect: false }
+    ]
+  },
+  {
+    id: 119,
+    text: "DMA Processordan júklemendi qalay ózgertedi?",
+    options: [
+      { id: 'a', text: "Processorǵa júklemendi kemeytedi.", isCorrect: true },
+      { id: 'b', text: "Processorǵa júklemendi arttıradı.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana yad allokaciyasın toqtatadı.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana fayldı oqıwǵa ruqsat beredi.", isCorrect: false }
+    ]
+  },
+  {
+    id: 120,
+    text: "Asynchronous I/O neni bildiredi?",
+    options: [
+      { id: 'a', text: "Programmanıń I/O tamamlanıwın kútiwsiz dawam etiw múmkinshiligi.", isCorrect: true },
+      { id: 'b', text: "Programmanıń I/O tamamlanıwın kutip turıwı.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana DMA qollanıw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana yad allokaciyası.", isCorrect: false }
+    ]
+  },
+  {
+    id: 121,
+    text: "Processler arasındaǵı sinxronizaciyalawda Monitor neni bildiredi?",
+    options: [
+      { id: 'a', text: "Sinxronizaciyalawshı joqarı dárejeli konstruksiya.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana maǵlıwmatlardı saqlaw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana faylǵa kirisiw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana tarmaq adresin ózgertiw.", isCorrect: false }
+    ]
+  },
+  {
+    id: 122,
+    text: "Fayl sistemasındaǵı FAT tiykarǵı wazıypası nede?",
+    options: [
+      { id: 'a', text: "Fayldıń maǵlıwmat bloklarınıń dizbegin dizip shıǵıw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana Processlerdiń yadın basqarıw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana tarmaq baylanısın qadaǵalaw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana CPU tezligin ólshew.", isCorrect: false }
+    ]
+  },
+  {
+    id: 123,
+    text: "Inode nomerleri ne ushın qollanıladı?",
+    options: [
+      { id: 'a', text: "Fayllardı anıqlaw hám olardıń metadata maǵlıwmatlarına kirisiw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana Process ID nomeri.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana tarmaq portı.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana yad bólimi.", isCorrect: false }
+    ]
+  },
+  {
+    id: 124,
+    text: "Zombie Process neni bildiredi?",
+    options: [
+      { id: 'a', text: "Atqarıwın tamamlaǵan, biraq kútip alınbaǵan Process.", isCorrect: true },
+      { id: 'b', text: "Process atqarıwdı baslamaǵan.", isCorrect: false },
+      { id: 'c', text: "Process áste isleytuǵın.", isCorrect: false },
+      { id: 'd', text: "Process tek ǵana tarmaqta isleytuǵın.", isCorrect: false }
+    ]
+  },
+  {
+    id: 125,
+    text: "Orphan Process neni bildiredi?",
+    options: [
+      { id: 'a', text: "Ana Processi óz balası Processinen aldın tamamlaǵan Process.", isCorrect: true },
+      { id: 'b', text: "Process atqarıwdıń eń basında.", isCorrect: false },
+      { id: 'c', text: "Process tek ǵana yad allokaciyası menen isleytuǵın.", isCorrect: false },
+      { id: 'd', text: "Process tek ǵana DMA-nı qollanıw.", isCorrect: false }
+    ]
+  },
+  {
+    id: 126,
+    text: "Process yadın diagnostika etiw ushın Linux-ta qollanılatuǵın úlgili fayl qaysı?",
+    options: [
+      { id: 'a', text: "/proc/[PID]/maps", isCorrect: true },
+      { id: 'b', text: "/etc/passwd", isCorrect: false },
+      { id: 'c', text: "/var/log/messages", isCorrect: false },
+      { id: 'd', text: "/usr/bin/", isCorrect: false }
+    ]
+  },
+  {
+    id: 127,
+    text: "Stack Overflow qátesi qalay júz beredi?",
+    options: [
+      { id: 'a', text: "Funksiya shaqırıqları Stek-tiń bólingen bóliminen asıp ketken waqıtta.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana yad allokaciyası nátiyjesinde.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana faylǵa kirisiw qátesi.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana tarmaq uziliwi.", isCorrect: false }
+    ]
+  },
+  {
+    id: 128,
+    text: "Buffer Overflow nege qáwip tuwdıradı?",
+    options: [
+      { id: 'a', text: "Programmanıń qáwipsizligin buzıwı hám koddı orınlaw múmkinshiligi.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana yad allokaciyasın optimallastırıw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana fayldı oqıw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana tarmaq tezligin asırıw.", isCorrect: false }
+    ]
+  },
+  {
+    id: 129,
+    text: "Virtual Bet Fizikalıq yadqa júkleniwge tayın bolǵanda, ol yadta qaysı birlikte saqlanadı?",
+    options: [
+      { id: 'a', text: "Frame (Kadra)", isCorrect: true },
+      { id: 'b', text: "Segment", isCorrect: false },
+      { id: 'c', text: "Blok", isCorrect: false },
+      { id: 'd', text: "Cluster", isCorrect: false }
+    ]
+  },
+  {
+    id: 130,
+    text: "Process Kestesi neni saqlaydı?",
+    options: [
+      { id: 'a', text: "Islep atırǵan hárbir Process haqqında maǵlıwmat (PCB).", isCorrect: true },
+      { id: 'b', text: "Tek ǵana fayl atlarını.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana tarmaq IP adreslerin.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana CPU tezligin.", isCorrect: false }
+    ]
+  },
+  {
+    id: 131,
+    text: "SSTF disk rejeleshtiriw algoritminiń tiykarǵı maqseti nede?",
+    options: [
+      { id: 'a', text: "Disk basınıń orın almasıw múddetin minimallastırıw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana kelgen tártipte islew.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana eń uzaq orın almasıw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana yad allokaciyası.", isCorrect: false }
+    ]
+  },
+  {
+    id: 132,
+    text: "C-SCAN disk rejeleshtiriw algoritmi ózgesheligi nede?",
+    options: [
+      { id: 'a', text: "Bir jóneliste úziksis orın almasıw hám basına qaytıw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana kelgen tártipte islew.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana eń qısqa orın almasıwǵa qaraǵan halda islew.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana tarmaq baylanısın optimallastırıw.", isCorrect: false }
+    ]
+  },
+  {
+    id: 133,
+    text: "DMA Kirgiziw/Shıǵarıw operaciyaları tamamlanǵannan soń Processorǵa ne arqalı xabar beredi?",
+    options: [
+      { id: 'a', text: "Úzilis (Interrupt) arqalı.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana Socket arqalı.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana fayl at qálli.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana yad allokaciyası arqalı.", isCorrect: false }
+    ]
+  },
+  {
+    id: 134,
+    text: "Endianness tarmaq programmalastırıwda ne ushın áhmiyetli?",
+    options: [
+      { id: 'a', text: "Maǵlıwmatlardı túrli arxitekturalar arasında durıs almasıw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana fayl ólshemin esaplaw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana processlerdi rejeleshtiriw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana yad fragmentaciyasın joq etiw.", isCorrect: false }
+    ]
+  },
+  {
+    id: 135,
+    text: "NFS neni bildiredi?",
+    options: [
+      { id: 'a', text: "Tarmaq arqalı fayl sistemasın bólisiw ushın protokol (Network File System).", isCorrect: true },
+      { id: 'b', text: "Tek ǵana yad allokatorı.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana Process ID.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana DMA kanalı.", isCorrect: false }
+    ]
+  },
+  {
+    id: 136,
+    text: "mmap() sistema shaqırıǵı ne ushın qollanıladı?",
+    options: [
+      { id: 'a', text: "Fayl yaki yadti Process yad maydanına kartaǵa qoyıw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana tarmaq baylanısın jaratıw.", isCorrect: false },
+      { id: 'c', text: "Mutexlerdi jaratıw.", isCorrect: false },
+      { id: 'd', text: "Processlerdi rejeleshtiriw.", isCorrect: false }
+    ]
+  },
+  {
+    id: 137,
+    text: "POSIX standartları nege baǵdarlanǵan?",
+    options: [
+      { id: 'a', text: "Programma portabelligin (túrli OS-larda islew) támiyinlew.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana yad ólshemin sheklew.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana fayl sistemasın sıǵıw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana tarmaq tezligin asırıw.", isCorrect: false }
+    ]
+  },
+  {
+    id: 138,
+    text: "Compiler programması tiykarǵı wazıypası nede?",
+    options: [
+      { id: 'a', text: "Derek kodın mashina kodına awdarıw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana yad allokaciyası.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana tarmaq portlarını ashıw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana faylǵa kirisiw.", isCorrect: false }
+    ]
+  },
+  {
+    id: 139,
+    text: "Pre-processor C programmasında ne isleytuǵın?",
+    options: [
+      { id: 'a', text: "Komponovkadan aldın makroslardı (#include, #define) atqarıw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana yad allokaciyası.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana tarmaq baylanısın jaratıw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana fayldı óshiriw.", isCorrect: false }
+    ]
+  },
+  {
+    id: 140,
+    text: "Condition Variable ne ushın qollanıladı?",
+    options: [
+      { id: 'a', text: "Process/Potoktıń belgili bir shártti kútiwi ushın.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana yad allokaciyası.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana tarmaq IP adresin ózgertiw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana fayl atın sanaw.", isCorrect: false }
+    ]
+  },
+  {
+    id: 141,
+    text: "Producer-Consumer máseleleri kóbinese qaysı sinxronizaciyalaw quralı menen sheshiledi?",
+    options: [
+      { id: 'a', text: "Semaforlar yaki buferler menen.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana DMA-nı qollanıw.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana CPU registrlerin.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana fayl huqıqların.", isCorrect: false }
+    ]
+  },
+  {
+    id: 142,
+    text: "Priority Inversion neni bildiredi?",
+    options: [
+      { id: 'a', text: "Tómen áhmiyetli process joqarı áhmiyetli processti bloklawı.", isCorrect: true },
+      { id: 'b', text: "Processlerdiń durıs atqarıwı.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana yad allokaciyası.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana tarmaq tezliginiń joqarılıǵı.", isCorrect: false }
+    ]
+  },
+  {
+    id: 143,
+    text: "Volatile gilt sózi ne ushın qollanıladı?",
+    options: [
+      { id: 'a', text: "Ózgeriwshiniń qiymatın yadtan tuwrıdan-tuwrı oqıw (optimizaciyanı boldırmaw).", isCorrect: true },
+      { id: 'b', text: "Tek ǵana yad allokaciyası.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana fayl atın ózgertiw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana tarmaq baylanısın.", isCorrect: false }
+    ]
+  },
+  {
+    id: 144,
+    text: "Superuser huqıqları ne ushın zárúr?",
+    options: [
+      { id: 'a', text: "OS tiykarǵı konfiguraciyasına hám barlıq fayllarǵa kirisiw.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana yad allokaciyası.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana tarmaq adresin ózgertiw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana DMA-nı óshiriw.", isCorrect: false }
+    ]
+  },
+  {
+    id: 145,
+    text: "Init Process rolı nede?",
+    options: [
+      { id: 'a', text: "Barlıq processlerdiń ana processi (PID 1).", isCorrect: true },
+      { id: 'b', text: "Tek ǵana yad allokaciyası.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana tarmaq adresin ózgertiw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana fayldı óshiriw.", isCorrect: false }
+    ]
+  },
+  {
+    id: 146,
+    text: "Kernel panic neni bildiredi?",
+    options: [
+      { id: 'a', text: "OS yadınıń dúzetip bolmaytuǵın qátege ushırawı.", isCorrect: true },
+      { id: 'b', text: "Tek ǵana yad allokaciyası.", isCorrect: false },
+      { id: 'c', text: "Tek ǵana tarmaq baylanısın jaratıw.", isCorrect: false },
+      { id: 'd', text: "Tek ǵana faylǵa kirisiw.", isCorrect: false }
+    ]
+  },
+  {
+    id: 147,
+    text: "TLB miss júz bergende OS birinshi náwbette ne isleytuǵın?",
+    options: [
+      { id: 'a', text: "Page Table'di (betler kestesin) tekseredi.", isCorrect: true },
+      { id: 'b', text: "Keshti tazalaydı.", isCorrect: false },
+      { id: 'c', text: "DMA-nı bloklaydı.", isCorrect: false },
+      { id: 'd', text: "IRQ-nı óshiredi.", isCorrect: false }
+    ]
+  },
+  {
+    id: 148,
+    text: "Kernel space -> user space ótiwdegi tiykarǵı mexanizm qaysı?",
+    options: [
+      { id: 'a', text: "Sistema shaqırıǵınan qaytıw (return from trap).", isCorrect: true },
+      { id: 'b', text: "DMA almasıwı.", isCorrect: false },
+      { id: 'c', text: "BIOS ISR mexanizmi.", isCorrect: false },
+      { id: 'd', text: "CPU mikro-kodı.", isCorrect: false }
+    ]
+  },
+  {
+    id: 149,
+    text: "Linker programmasınıń wazıypası ne?",
+    options: [
+      { id: 'a', text: "Obyekt fayllardı bir orınlanıwshı faylǵa birlestiriw.", isCorrect: true },
+      { id: 'b', text: "Kodtı qatarma-qatar oqıp orınlaw.", isCorrect: false },
+      { id: 'c', text: "Kodtı joqarı dárejedegi tilge awdarıw.", isCorrect: false },
+      { id: 'd', text: "Qátelerdi avtomatikalıq túrde dúzetiw.", isCorrect: false }
+    ]
+  },
+  {
+    id: 150,
+    text: "Loader wazıypası ne?",
+    options: [
+      { id: 'a', text: "Orınlanıwshı fayldı diskten yadqa júklew.", isCorrect: true },
+      { id: 'b', text: "Programmanıń derek kodın jazıw.", isCorrect: false },
+      { id: 'c', text: "Fayllardı arxivlep saqlaw.", isCorrect: false },
+      { id: 'd', text: "Tarmaq qáwipsizligin tekseriw.", isCorrect: false }
     ]
   }
 ];
