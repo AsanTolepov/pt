@@ -22,8 +22,8 @@ interface GameData {
   status: GameStatus;
   hostId: string;
   currentQuestionIndex: number;
-  timePerQuestion: number; // Sozlamadagi vaqt
-  timer: number; // Hozirgi qolgan vaqt
+  timePerQuestion: number;
+  timer: number;
   questions: Question[];
   players: Player[];
 }
@@ -36,6 +36,9 @@ const App: React.FC = () => {
   const [myName, setMyName] = useState('');
   
   const [game, setGame] = useState<GameData | null>(null);
+  
+  // YANGI: O'yinchilar ro'yxatini ko'rsatish/yashirish
+  const [showPlayerList, setShowPlayerList] = useState(false);
 
   // Sozlamalar
   const [qCount, setQCount] = useState(15);
@@ -68,9 +71,8 @@ const App: React.FC = () => {
     return () => unsubscribe();
   }, [gameId, mode]);
 
-  // --- 2. HOST TIMER LOGIKASI (ENG MUHIM QISM) ---
+  // --- 2. HOST TIMER LOGIKASI ---
   useEffect(() => {
-    // Timer faqat Host-da va faqat 'QUESTION' rejimida ishlaydi
     if (!game || game.hostId !== myPlayerId || game.status !== 'QUESTION') {
       if (timerRef.current) clearInterval(timerRef.current);
       return;
@@ -78,12 +80,10 @@ const App: React.FC = () => {
 
     timerRef.current = setInterval(async () => {
       if (game.timer > 0) {
-        // Vaqtni kamaytirish
         await updateDoc(doc(db, 'games', gameId), { timer: game.timer - 1 });
       } else {
-        // Vaqt tugadi -> Natijani ko'rsatish
         clearInterval(timerRef.current!);
-        handlePhaseChange(true); // true = majburiy o'tkazish
+        handlePhaseChange(true); 
       }
     }, 1000);
 
@@ -101,7 +101,6 @@ const App: React.FC = () => {
     const newGameId = Math.floor(100000 + Math.random() * 900000).toString();
     const hostPlayerId = 'host_' + Date.now();
 
-    // Savollarni tayyorlash
     let selectedQuestions = [...QUESTIONS];
     if (shuffleMode === 'QUESTIONS' || shuffleMode === 'BOTH') {
       selectedQuestions.sort(() => Math.random() - 0.5);
@@ -138,7 +137,7 @@ const App: React.FC = () => {
       setMyPlayerId(hostPlayerId);
       setMode('LOBBY');
     } catch (error) {
-      alert("Firebase xatosi. Qoidalarni tekshiring.");
+      alert("Firebase xatosi.");
     }
   };
 
@@ -150,12 +149,10 @@ const App: React.FC = () => {
     });
   };
 
-  // Bosqich almashishi (QUESTION -> REVIEW -> NEXT QUESTION)
   const handlePhaseChange = async (forceReview = false) => {
     if (!game) return;
 
     if (game.status === 'QUESTION' || forceReview) {
-      // 1. Ballarni hisoblash
       const currentQ = game.questions[game.currentQuestionIndex];
       const correctOpt = currentQ.options.find(o => o.isCorrect)?.id;
 
@@ -166,14 +163,12 @@ const App: React.FC = () => {
         return p;
       });
 
-      // 2. Review rejimiga o'tish
       await updateDoc(doc(db, 'games', gameId), {
         status: 'REVIEW',
         players: updatedPlayers
       });
 
     } else if (game.status === 'REVIEW') {
-      // 3. Keyingi savolga o'tish
       const nextIndex = game.currentQuestionIndex + 1;
       const resetPlayers = game.players.map(p => ({ ...p, currentAnswer: null }));
 
@@ -181,7 +176,7 @@ const App: React.FC = () => {
         await updateDoc(doc(db, 'games', gameId), {
           status: 'QUESTION',
           currentQuestionIndex: nextIndex,
-          timer: game.timePerQuestion, // Vaqtni qayta tiklash
+          timer: game.timePerQuestion,
           players: resetPlayers
         });
       } else {
@@ -352,28 +347,69 @@ const App: React.FC = () => {
     const currentQ = game.questions[game.currentQuestionIndex];
     const myPlayer = game.players.find(p => p.id === myPlayerId);
     
-    // --- TIMER RANGLARI ---
     let timerColor = 'bg-blue-600';
     if (game.timer <= 10) timerColor = 'bg-orange-500';
     if (game.timer <= 5) timerColor = 'bg-red-600';
 
     return (
-      <div className="min-h-screen bg-gray-100 flex flex-col">
-        {/* HEADER: TIMER VA SAVOL RAQAMI */}
+      <div className="min-h-screen bg-gray-100 flex flex-col relative">
+        
+        {/* MODAL: O'YINCHILAR RO'YXATI */}
+        {showPlayerList && (
+          <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-sm" onClick={() => setShowPlayerList(false)}>
+            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm overflow-hidden" onClick={e => e.stopPropagation()}>
+              <div className="bg-blue-600 p-4 text-white flex justify-between items-center">
+                <h3 className="font-bold text-lg">O'yinchilar ({game.players.length})</h3>
+                <button onClick={() => setShowPlayerList(false)} className="bg-white/20 hover:bg-white/40 rounded-full w-8 h-8 flex items-center justify-center">✕</button>
+              </div>
+              <div className="p-4 max-h-[60vh] overflow-y-auto space-y-2">
+                {[...game.players].sort((a, b) => b.score - a.score).map((p, index) => (
+                  <div key={p.id} className={`flex justify-between items-center p-3 rounded-lg ${p.id === myPlayerId ? 'bg-blue-50 border border-blue-200' : 'bg-gray-50'}`}>
+                    <div className="flex items-center gap-2">
+                       <span className="font-mono text-gray-400 text-sm">#{index + 1}</span>
+                       <span className="font-medium text-gray-800">
+                         {p.name}
+                         {p.id === game.hostId && " 👑"}
+                         {p.id === myPlayerId && " (Siz)"}
+                       </span>
+                    </div>
+                    <span className="font-bold text-blue-600">{p.score} ball</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* HEADER */}
         <div className="bg-white p-4 shadow-sm sticky top-0 z-10">
            <div className="flex justify-between items-center mb-2">
-             <span className="font-bold text-gray-700">Savol {game.currentQuestionIndex + 1}/{game.questions.length}</span>
-             {game.status === 'QUESTION' && (
-               <span className={`font-mono font-bold text-xl ${game.timer <= 5 ? 'text-red-600 animate-pulse' : 'text-blue-600'}`}>
-                 ⏱ {game.timer}s
-               </span>
-             )}
+             <span className="font-bold text-gray-700 text-sm md:text-base">Savol {game.currentQuestionIndex + 1}/{game.questions.length}</span>
+             
+             <div className="flex items-center gap-3">
+               {/* Vaqt */}
+               {game.status === 'QUESTION' && (
+                 <span className={`font-mono font-bold text-xl ${game.timer <= 5 ? 'text-red-600 animate-pulse' : 'text-blue-600'}`}>
+                   ⏱ {game.timer}
+                 </span>
+               )}
+               
+               {/* YANGI: Odamchalar Tugmasi */}
+               <button 
+                 onClick={() => setShowPlayerList(true)}
+                 className="flex items-center gap-1 bg-gray-100 hover:bg-gray-200 px-3 py-1.5 rounded-full text-sm font-medium transition"
+               >
+                 <span>👥</span>
+                 <span>{game.players.length}</span>
+               </button>
+             </div>
            </div>
+
            {/* Progress Bar */}
            {game.status === 'QUESTION' && (
-             <div className="w-full bg-gray-200 rounded-full h-2.5">
+             <div className="w-full bg-gray-200 rounded-full h-2">
                <div 
-                 className={`h-2.5 rounded-full transition-all duration-1000 ease-linear ${timerColor}`} 
+                 className={`h-2 rounded-full transition-all duration-1000 ease-linear ${timerColor}`} 
                  style={{ width: `${(game.timer / game.timePerQuestion) * 100}%` }}
                ></div>
              </div>
@@ -404,7 +440,6 @@ const App: React.FC = () => {
                return (
                  <button
                    key={opt.id}
-                   // HOST ENDI O'YNAY OLADI: disabled faqat javob berib bo'lsa ishlaydi
                    disabled={!!myPlayer?.currentAnswer && !showResult} 
                    onClick={() => submitAnswer(opt.id)}
                    className={`w-full p-4 rounded-xl border-2 text-left transition-all duration-200 flex items-center gap-3 ${btnClass}`}
@@ -418,28 +453,20 @@ const App: React.FC = () => {
              })}
           </div>
 
-          {/* STATUS XABARLARI */}
           {game.status === 'QUESTION' && myPlayer?.currentAnswer && (
              <div className="mt-8 text-center text-gray-400 animate-pulse">
                Vaqt tugashini kuting... ⏳
              </div>
           )}
 
-          {/* HOST BOSHQARUVI (Faqat Review paytida keyingisiga o'tkazish uchun) */}
           {isHost && (
-            <div className="fixed bottom-0 left-0 w-full bg-white p-4 shadow-lg border-t flex justify-center z-50">
+            <div className="fixed bottom-0 left-0 w-full bg-white p-4 shadow-lg border-t flex justify-center z-40">
                {game.status === 'QUESTION' ? (
-                 <button 
-                   onClick={() => handlePhaseChange(true)} // Majburiy o'tkazish
-                   className="px-6 py-2 bg-red-100 text-red-600 rounded-lg font-bold text-sm"
-                 >
+                 <button onClick={() => handlePhaseChange(true)} className="px-6 py-2 bg-red-100 text-red-600 rounded-lg font-bold text-sm">
                    Vaqtni to'xtatish ⏹
                  </button>
                ) : (
-                 <button 
-                   onClick={() => handlePhaseChange()}
-                   className="px-10 py-3 bg-blue-600 text-white rounded-xl font-bold shadow-lg hover:bg-blue-700 animate-bounce"
-                 >
+                 <button onClick={() => handlePhaseChange()} className="px-10 py-3 bg-blue-600 text-white rounded-xl font-bold shadow-lg hover:bg-blue-700 animate-bounce">
                    Keyingi Savol ➡️
                  </button>
                )}
