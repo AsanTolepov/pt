@@ -41,10 +41,9 @@ const App: React.FC = () => {
   const [game, setGame] = useState<GameData | null>(null);
   const [showPlayerList, setShowPlayerList] = useState(false);
 
-  // --- SOZLAMALAR (YANGILANGAN) ---
-  // Oraliqni tanlash uchun
+  // --- SOZLAMALAR ---
   const [rangeStart, setRangeStart] = useState(1);
-  const [rangeEnd, setRangeEnd] = useState(Math.min(30, QUESTIONS.length)); // Default 30 yoki boricha
+  const [rangeEnd, setRangeEnd] = useState(Math.min(30, QUESTIONS.length));
   
   const [timeLimit, setTimeLimit] = useState(20);
   const [shuffleMode, setShuffleMode] = useState<ShuffleMode>('BOTH');
@@ -88,6 +87,8 @@ const App: React.FC = () => {
     }
 
     timerRef.current = setInterval(async () => {
+      // Bu yerda biz firebasedagi vaqtni kamaytiramiz
+      // Lekin handlePhaseChange chaqirilganda, u baribir yangi data oladi
       if (game.timer > 0) {
         await updateDoc(doc(db, 'games', gameId), { timer: game.timer - 1 });
       } else {
@@ -135,7 +136,6 @@ const App: React.FC = () => {
   const createGame = async () => {
     if (!myName.trim()) return alert("Ism kiriting!");
     
-    // Validatsiya
     if (rangeStart < 1 || rangeEnd > QUESTIONS.length || rangeStart > rangeEnd) {
       return alert(`Oraliq xato! 1 dan ${QUESTIONS.length} gacha bo'lishi kerak.`);
     }
@@ -145,17 +145,12 @@ const App: React.FC = () => {
     const newGameId = Math.floor(100000 + Math.random() * 900000).toString();
     const hostPlayerId = 'host_' + Date.now();
 
-    // 1. Oraliqni kesib olish (Masalan 61-90)
-    // Array 0-indexlanadi, shuning uchun start-1
     let selectedQuestions = QUESTIONS.slice(rangeStart - 1, rangeEnd);
 
-    // 2. Savollarni aralashtirish (agar kerak bo'lsa)
     if (shuffleMode === 'QUESTIONS' || shuffleMode === 'BOTH') {
       selectedQuestions.sort(() => Math.random() - 0.5);
     }
 
-    // 3. Variantlarni aralashtirish
-    // Bu yerda ID o'zgarmaydi, faqat array ichidagi o'rni o'zgaradi
     if (shuffleMode === 'OPTIONS' || shuffleMode === 'BOTH') {
       selectedQuestions = selectedQuestions.map(q => ({
         ...q,
@@ -200,39 +195,53 @@ const App: React.FC = () => {
     });
   };
 
+  // --- ENG MUHIM O'ZGARISH SHU YERDA ---
   const handlePhaseChange = async (forceReview = false) => {
-    if (!game) return;
+    // Biz 'game' state-dan foydalanmaymiz, chunki u eski bo'lishi mumkin.
+    // Buning o'rniga to'g'ridan-to'g'ri bazadan olamiz.
+    const gameRef = doc(db, 'games', gameId);
+    const gameSnap = await getDoc(gameRef);
 
-    if (game.status === 'QUESTION' || forceReview) {
-      const currentQ = game.questions[game.currentQuestionIndex];
-      // To'g'ri javob ID sini topamiz
+    if (!gameSnap.exists()) return;
+    const liveGame = gameSnap.data() as GameData;
+
+    if (liveGame.status === 'QUESTION' || forceReview) {
+      // NATIJANIK HISOBLASH
+      const currentQ = liveGame.questions[liveGame.currentQuestionIndex];
       const correctOpt = currentQ.options.find(o => o.isCorrect)?.id;
 
-      const updatedPlayers = game.players.map(p => {
+      const updatedPlayers = liveGame.players.map(p => {
         if (p.currentAnswer === correctOpt) {
           return { ...p, score: p.score + 1 };
         }
         return p;
       });
 
-      await updateDoc(doc(db, 'games', gameId), {
+      await updateDoc(gameRef, {
         status: 'REVIEW',
         players: updatedPlayers
       });
 
-    } else if (game.status === 'REVIEW') {
-      const nextIndex = game.currentQuestionIndex + 1;
-      const resetPlayers = game.players.map(p => ({ ...p, currentAnswer: null }));
+    } else if (liveGame.status === 'REVIEW') {
+      // KEYINGI SAVOLGA O'TISH
+      const nextIndex = liveGame.currentQuestionIndex + 1;
+      
+      // JAVOBLARNI TOZALASH (CRITICAL FIX)
+      // Biz liveGame.players dan foydalanib, yangi tozalangan array yasaymiz
+      const resetPlayers = liveGame.players.map(p => ({ 
+        ...p, 
+        currentAnswer: null 
+      }));
 
-      if (nextIndex < game.questions.length) {
-        await updateDoc(doc(db, 'games', gameId), {
+      if (nextIndex < liveGame.questions.length) {
+        await updateDoc(gameRef, {
           status: 'QUESTION',
           currentQuestionIndex: nextIndex,
-          timer: game.timePerQuestion,
-          players: resetPlayers
+          timer: liveGame.timePerQuestion,
+          players: resetPlayers // Tozalangan o'yinchilar
         });
       } else {
-        await updateDoc(doc(db, 'games', gameId), { status: 'LEADERBOARD' });
+        await updateDoc(gameRef, { status: 'LEADERBOARD' });
       }
     }
   };
@@ -282,14 +291,20 @@ const App: React.FC = () => {
 
   const submitAnswer = async (optId: string) => {
     if (!game) return;
+    // Javob berishda ham optimistic UI emas, to'g'ri update qilamiz
+    // Lekin user uchun tezkorlik kerak, shuning uchun local state ham ishlatish mumkin.
+    // Hozircha oddiy update:
+    
+    // O'zimizni topamiz
+    const myP = game.players.find(p => p.id === myPlayerId);
+    if (myP?.currentAnswer) return; // Agar javob bergan bo'lsa qaytaramiz
+
     const updatedPlayers = game.players.map(p => 
       p.id === myPlayerId ? { ...p, currentAnswer: optId } : p
     );
     await updateDoc(doc(db, 'games', gameId), { players: updatedPlayers });
   };
 
-  // --- YARDAMCHI FUNKSIYA: VISUAL LABEL ---
-  // Index 0 -> A, Index 1 -> B, ...
   const getLabel = (index: number) => String.fromCharCode(65 + index);
 
   // --- RENDER ---
@@ -338,7 +353,6 @@ const App: React.FC = () => {
           <h2 className="text-xl font-bold text-center">Sozlamalar</h2>
           <input type="text" placeholder="Ismingiz..." className="w-full p-3 border rounded-lg" value={myName} onChange={e => setMyName(e.target.value)} />
           
-          {/* YANGI: Savollar oralig'ini tanlash */}
           <div className="bg-gray-50 p-3 rounded-lg border">
              <p className="text-xs font-bold text-gray-500 mb-2 uppercase">Savollar Oralig'i (Jami: {QUESTIONS.length})</p>
              <div className="flex items-center gap-2">
@@ -531,7 +545,6 @@ const App: React.FC = () => {
            <div className="flex justify-between items-center mb-2">
              <div className="flex flex-col">
                 <span className="text-xs text-gray-500 font-bold uppercase">Savol</span>
-                {/* 1, 2, 3 deb chiqadi (61-90 tanlansa ham 1 dan boshlanadi) */}
                 <span className="font-bold text-gray-800 text-lg leading-none">{game.currentQuestionIndex + 1}<span className="text-gray-400 text-sm">/{game.questions.length}</span></span>
              </div>
              
@@ -570,16 +583,11 @@ const App: React.FC = () => {
           </div>
 
           <div className="space-y-3">
-             {/* 
-                Variantlarni ko'rsatish logikasi:
-                Biz 'opt.id' ni yashiramiz va uning o'rniga loop index-dan foydalanib A, B, C, D harflarini yasaymiz.
-             */}
              {currentQ.options.map((opt, index) => {
                const isSelected = myPlayer?.currentAnswer === opt.id;
                const showResult = game.status === 'REVIEW';
                const isCorrect = opt.isCorrect;
                
-               // VISUAL LABEL: 0->A, 1->B, 2->C, 3->D
                const visualLabel = getLabel(index);
                
                let btnClass = "bg-white border-gray-200 text-gray-600 hover:border-blue-300 shadow-sm";
@@ -599,7 +607,6 @@ const App: React.FC = () => {
                    onClick={() => submitAnswer(opt.id)}
                    className={`w-full p-4 rounded-xl border-2 text-left transition-all duration-200 flex items-center gap-3 relative overflow-hidden ${btnClass}`}
                  >
-                   {/* Bu yerda visualLabel (A, B, C...) ishlatilmoqda */}
                    <span className={`font-bold uppercase w-8 h-8 flex items-center justify-center rounded-lg text-sm ${showResult && isCorrect ? 'bg-green-200 text-green-800' : 'bg-gray-100 text-gray-500'}`}>
                       {visualLabel}
                    </span>
